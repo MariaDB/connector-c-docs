@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_charset_by_nr" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_charset_by_nr</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_charset_by_nr</refname>
+    <refpurpose>Returns a specified character set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>CHARSET_INFO *</type>
+      <methodname>mysql_get_charset_by_name</methodname>
+      <methodparam>
+        <type>uint </type>
+        <parameter>number</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      returns a character set specified by
+      <parameter>number</parameter>
+      .
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>number</parameter></term>
+          <listitem><para>Character set number</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A
+      <structname>CHARSET_INFO</structname>
+      pointer of NULL if the specified character set could not be found.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        Character set numbers are specified in source file
+        <filename>my_charset.c</filename>
+        .
+      </para>
+      <para>
+        The same character set might have different numbers, since internally
+        numbers also specify the collation. E.g the character set
+        <varname>latin1</varname>
+        has the numbers 47, 48, 49 and 94. &product_name; itself doesn't support
+        collations.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_charset_by_name;
+    </para>
+  </refsect1>
+</refentry>

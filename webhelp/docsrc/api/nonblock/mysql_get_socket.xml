@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_socket" display-name="1">
+  <refmeta>
+    <refentrytitle>mysql_get_socket</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_socket</refname> 
+    <refpurpose>Returns the descriptor of the socket used for the connection</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_socket</type>
+      <methodname>mysql_get_socket</methodname>
+      <methodparam>
+        <type>const MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the descriptor of the socket used for the connection.
+      The descriptor of the socket can be used for <function>poll()</function> as shown
+      in the example at the beginning of the non-blocking API chapter.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &retitle.retval;
+    <para>
+      Returns the descriptor of the socket used for the current connection.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 2.0</para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_timeout_value; &function.mysql_get_timeout_value_ms;
+    </para>
+  </refsect1>
+</refentry>

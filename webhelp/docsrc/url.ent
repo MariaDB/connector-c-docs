@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!ENTITY url.license.cc "http://creativecommons.org/licenses/by/3.0/">
+<!ENTITY email.mariadb.license.doc "docs@mariadb.org">
+<!ENTITY url.license.lgpl "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html">
+<!ENTITY url.mariadb.docs.download "http://www.mariadb.org/downloads">
+<!ENTITY url.mariadb.download '<ulink url="http://www.mariadb.org/downloads">www.mariadb.com/downloads</ulink>'>
+<!ENTITY url.cmake.download '<ulink url="http://www.cmake.org">www.cmake.org</ulink>'>
+<!ENTITY url.openssl.windows.download '<ulink url="http://slproweb.com/products/Win32OpenSSL.html">http://slproweb.com/products/Win32OpenSSL.html</ulink>'>
+<!ENTITY url.zlib.windows.download '<ulink url="http://gnuwin32.sourceforge.net/packages/zlib.htm">http://gnuwin32.sourceforge.net/packages/zlib.htm</ulink>'>
+<!ENTITY url.bzr.download '<ulink url="https://launchpad.net/bzr/+download">https://launchpad.net/bzr/+download</ulink>'>
+<!ENTITY url.wix.download '<ulink url="http://http://wixtoolset.org/">http://wixtoolset.org/</ulink>'>
+<!ENTITY url.mariadb.bugs '<ulink url="https://mariadb.atlassian.net/">https://mariadb.atlassian.net/</ulink>'>

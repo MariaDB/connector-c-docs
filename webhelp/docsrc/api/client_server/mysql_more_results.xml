@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_more_results" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_more_results</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_more_results</refname>
+    <refpurpose>Check if there are any more query results from a multi query</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_more_results</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Indicates if one or more result sets are available from a previous call to
+      &function.mysql_real_query;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 1 if more result sets are available, otherwise zero.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The function &function.mysql_set_server_option; enables or disables multi
+        statement support.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_query;, &function.mysql_use_result;,
+      &function.mysql_store_result;, &function.mysql_next_result;
+    </para>
+  </refsect1>
+</refentry>

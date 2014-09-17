@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE book [
+
+<!ENTITY % global_ents SYSTEM "global.ent">
+<!ENTITY % url_ents SYSTEM "url.ent">
+<!ENTITY % var_ents SYSTEM "entities/var.ent">
+<!ENTITY % file_ents SYSTEM "entities/file.ent">
+<!ENTITY % funcref_ents SYSTEM "entities/funcref.ent">
+%global_ents;
+%url_ents;
+%var_ents;
+%file_ents;
+%funcref_ents;
+<!ENTITY % default_ents SYSTEM "entities/default-defs.ent">
+%default_ents;
+]>
+<book xmlns="http://docbook.org/ns/docbook" version="4.5" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>&product_name;</title>
+  &bookinfo;
+  &preface;
+  &chapters.introduction;
+  &chapters.installation;
+  <chapter id="api">
+    <title>API</title>
+    &api.charset.book;
+    &api.client_server.book;
+    &api.dyncol.book;
+    &api.nonblock.book;
+  </chapter>
+  <appendix id="appendices" lang="en">
+  <title>Appendices</title>
+  &appendices.license;
+  &appendices.quanda;
+  &appendices.changelog;
+  </appendix>
+</book>

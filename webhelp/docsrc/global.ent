@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!ENTITY example_path "/examples">
+<!ENTITY param.result "A result set identifier returned by <function>mysql_store_result()</function> or <function>mysql_use_result()</function>.">
+<!ENTITY param.mysql 'A mysql handle, which was previously initialized or allocated by <link linkend="functions.mysql_init"><function>mysql_init()</function></link> and connected by <link linkend="functions.mysql_real_connect"><function>mysql_real_connect()</function></link>.'>
+<!ENTITY param.result_store "A result set identifier returned by <function>mysql_store_result()</function>.">
+<!ENTITY param.stmt "A statement handle, which was previously allocated by <function>mysql_stmt_init()</function>.">
+<!ENTITY return.my_bool "Zero on success, nonzero if an error occured.">
+<!ENTITY deprecated.function "This function is deprecated and will be discontinued.">
+<!ENTITY return.nonblock "<para>Returns zero when done, or a bitmask of events it needs to wait on.  This can be <constant>MYSQL_WAIT_READ</constant>, <constant>MYSQL_WAIT_WRITE</constant>, or <constant>MYSQL_WAIT_EXCEPT</constant>, corresponding to the similar flags for <function>select()</function> or <function>poll()</function> and it can include <constant>MYSQL_WAIT_TIMEOUT</constant> when waiting for a timeout to occur (e.g. a connection timeout).</para>">
+<!ENTITY url.cc.license "http://creativecommons.org/licenses/by/3.0/">
+

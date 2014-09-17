@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_fetch_field" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_fetch_field</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_fetch_field</refname>
+    <refpurpose>Returns the next field in the result set.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_FIELD *</type>
+      <methodname>mysql_fetch_field</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>result</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the definition of one column of a result set as a pointer to a
+      <parameter>MYSQL_FIELD</parameter>
+      structure. Call this function repeatedly to retrieve information about all
+      columns in the result set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>result</parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A pointer to a
+      <parameter>MYSQL_FIELD</parameter>
+      structure or
+      <parameter>NULL</parameter>
+      when no more field is left.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          The field order will be reset if you execute a new SELECT query.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In case only information for a specific field is required the field can be
+          selected by using the &function.mysql_field_seek; function or obtained by
+          &function.mysql_fetch_field_direct; function.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_field_seek;, &function.mysql_field_tell;,
+      &function.mysql_fetch_field_direct;,
+      &function.mysql_store_result;, &function.mysql_use_result;
+    </para>
+  </refsect1>
+</refentry>

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_real_query_cont" display-name="1">
+  <refmeta>
+    <refentrytitle>mysql_real_query_cont</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_real_query_cont</refname> 
+    <refpurpose>Checks the status of the previously executed statement request.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_real_query_cont</methodname>
+      <methodparam>
+        <type>int *</type>
+        <parameter>err</parameter>
+      </methodparam>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>int</type>
+        <parameter>status</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Checks the status of the previously executed statement request.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>err</parameter></term>
+          <listitem><para>&retval.bool;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>A mysql handle, which was previously initialized or allocated by &function.mysql_init; and connected by &function.mysql_real_connect_start;. </para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>status</parameter></term>
+          <listitem><para>Return value from a previously executed &function.mysql_real_query_start; or &function.mysql_real_query_cont; function</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &retitle.retval;
+    &return.nonblock;
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 2.0</para>
+  </refsect1>
+  <refsect1>
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        This function will crash with a NULL pointer exception unless the <constant>MYSQL_OPT_NONBLOOCK</constant> option was set via &mysql_options;.
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_query; &function.mysql_real_query_start;
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.example;
+    <para>See &function.mysql_real_query_start;</para>
+  </refsect1>
+</refentry>

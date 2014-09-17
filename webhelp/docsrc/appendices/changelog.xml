@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appendix xml:id="appendix.changelog">
+ <title>
+  Revision history
+ </title>
+&revhistory.log; 
+</appendix>

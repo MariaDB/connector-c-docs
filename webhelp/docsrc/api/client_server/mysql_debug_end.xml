@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_debug_end" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_debug_end</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_debug_end</refname>
+    <refpurpose>Disables output of debug information</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_debug_end</methodname>
+      <methodparam>
+        <type>void</type>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Stops output of debug information.   </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      void
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          For using this function the mariadb-client library must be
+          compiled with debug support
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_debug_end;, &function.mysql_dump_debug_info;
+    </para>
+  </refsect1>
+  <!--
+  <refsect1 role="example">
+    <title>Example</title>
+    <programlisting role="xml">
+      <xi:include href="&example_path;/mysql_debug.c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </programlisting>
+    The above example will output:
+    <programlisting><xi:include href="&example_path;/mysql_debug.out" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/></programlisting>
+  </refsect1> -->
+</refentry>

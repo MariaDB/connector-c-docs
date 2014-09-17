@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_fetch" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_fetch</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_fetch</refname>
+    <refpurpose>Fetches result buffer into bound buffer</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_stmt_fetch</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Fetch the result from a prepared statement into the buffer bound by
+      &function.mysql_stmt_bind_result;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns one of the following values
+    </para>
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>0</term>
+          <term><parameter>Success</parameter></term>
+        </varlistentry>
+        <varlistentry>
+          <term>MYSQL_NO_DATA</term>
+          <listitem><para>End of result set reached</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>MYSQL_DATA_TRUNCATION</term>
+          <term><parameter>One or more values are truncated</parameter></term>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Note that all columns must be bound by the application before calling
+        &function.mysql_stmt_fetch;.
+      </para>
+      <para>
+        Data are transferred unbuffered without calling
+        &function.mysql_stmt_store_result; which can decrease performance (but
+        reduces memory cost).
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_prepare;, &function.mysql_stmt_bind_result;,
+      &function.mysql_stmt_execute;
+    </para>
+  </refsect1>
+</refentry>

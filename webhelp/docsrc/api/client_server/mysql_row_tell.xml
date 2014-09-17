@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_row_tell" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_row_tell</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_row_tell</refname>
+    <refpurpose>Returns position of result cursor</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_ROW_OFFSET</type>
+      <methodname>mysql_row_tell</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>res</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the row offset of a result cursor. The returned offset value can be
+      used to reposition the result cursor by calling &function.mysql_row_seek;
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>res</parameter></term>
+          <listitem><para>&param.result_store;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The row offset of the result cursor
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        This function will not work if the result set was obtained by
+        &function.mysql_use_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_store_result;, &function.mysql_row_seek;
+    </para>
+  </refsect1>
+</refentry>

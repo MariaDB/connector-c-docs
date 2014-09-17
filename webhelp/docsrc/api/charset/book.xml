@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section>
+<title>
+  Character set API
+ </title>
+ <para>
+  &product_name; supports various character sets and client side
+  character set conversion.
+ </para>
+ <para>
+  Due to license restrictions &product_name; doesn't use the character
+  set routines and functionality from the server. Instead it uses the iconv
+  library and on Windows platforms native Windows API functions. This might lead
+  to different results, since server routines don't support all panes of
+  specific character sets.
+ </para>
+&reftitle.notes;
+<itemizedlist>
+    &reftitle.notes;
+    <para>
+   Character set support was added in Version 1.1
+  </para>
+  <para>
+   The default character set is utf8.
+  </para>
+</itemizedlist>
+ &api.charset.charsets; 
+ &api.charset.data_structures;
+ &api.charset.reference;
+</section>

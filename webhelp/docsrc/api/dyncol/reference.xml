@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="ref.dyncol">
+<title>
+  Function reference
+ </title>
+ <partintro>
+&reftitle.notes;
+<itemizedlist>
+    &reftitle.notes;
+    <para>
+    The dynamic column API from MariaDB 5.5 is deprecated and not supported
+    anymore.
+   </para>
+   <para>
+    To migrate your code, please change the
+    <function>dynamic_column_xxxx</function>
+    function calls to
+    <function>mariadb_dyncol_xxxxx_num</function>
+    syntax.
+   </para>
+</itemizedlist>
+ </partintro>
+  &api.dyncol.entities.functions;
+</section>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="ref.client_api">
+<title>
+  Function reference
+ </title>
+  <para>
+   Not all functions are supported by all packages. Please refer to the version
+   information inside the function reference to check if the function is
+   supported. Some functionality like experimental features are disabled by
+   default and can be activated by build switches.
+  </para>
+  <para>
+   The MariaDB client server API is compatible with the MySQL client library.
+   The API was built on top of MySQL 3.23 and PHP's mysqlnd extension. Functions
+   which support specific MariaDB server features are prefixed with mariadb
+   instead of mysql.
+  </para>
+  &api.client_server.entities.functions;
+</section>

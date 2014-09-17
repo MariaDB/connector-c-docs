@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_real_connect_cont" display-name="1">
+  <refmeta>
+    <refentrytitle>mysql_real_connect_cont</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_real_connect_cont</refname> 
+    <refpurpose>Checks the status of the previously executed connection request.  </refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_real_connect_cont</methodname>
+      <methodparam>
+        <type>MYSQL **</type>
+        <parameter>ret</parameter>
+      </methodparam>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>int</type>
+        <parameter>status</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Initiates a non-blocking connection request to a server.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>ret</parameter></term>
+          <listitem><para>When &function.mysql_real_connect_cont; returns zero, a copy of the passed 'mysql' argument is stored in *ret.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>A mysql handle, which was previously initialized or allocated by &function.mysql_init; and connected by &function.mysql_real_connect_start;. </para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>status</parameter></term>
+          <listitem><para>Return value from a previously executed &function.mysql_real_connect_start; or &function.mysql_real_connect_cont; function</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &retitle.retval;
+    &return.nonblock;
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 2.0</para>
+  </refsect1>
+  <refsect1>
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        The value of *ret is a connection handle. In case it's value is NULL, a connection error occured.
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_connect; &function.mysql_real_connect_start;
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.example;
+    <para>See &function.mysql_real_connect_start;</para>
+  </refsect1>
+</refentry>

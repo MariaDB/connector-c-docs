@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_ssl_set" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_ssl_set</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_ssl_set</refname>
+    <refpurpose>Establishes a SSL connection</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_ssl_set</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>key</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>cert</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>ca</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>capath</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>cipher</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Used for establishing secure connections using SSL. The function must be called before &function.mysql_real_connect; 
+      This function does nothing unless OpenSSL support is enabled. 
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>key</parameter></term>
+          <listitem><para>The path name to the key file</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>cert</parameter></term>
+          <listitem><para>The path name to the certificate file</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>ca</parameter></term>
+          <listitem><para>The path name to the certificate authority file</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>capath</parameter></term>
+          <listitem><para>The pathname to a directory that contains trusted SSL ca certificates in PEM format</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>cipher</parameter></term>
+          <listitem><para>A list of valid ciphers to use for SSL encryption</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.1
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <param>&function.mysql_get_ssl_cipher;</param>
+  </refsect1>
+</refentry>

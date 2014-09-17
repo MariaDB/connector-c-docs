@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_store_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_store_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_store_result</refname>
+    <refpurpose>Returns a buffered resultset from the last executed query</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_RES *</type>
+      <methodname>mysql_store_result</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Transfers a buffered result set from the last query on the database
+      connection
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A buffered result set or NULL if an error occured.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        &function.mysql_store_result; returns NULL in case an error occured or if
+        the query didn't return data (e.g. when executing an
+        <command>INSERT</command>
+        or
+        <command>UPDATE</command>
+        query.
+      </para>
+      <para>
+        &function.mysql_field_count; indicates if there will be a result set
+        available.
+      </para>
+      <para>
+        The memory allocated by &function.mysql_store_result; needs to be relased by
+        calling the function &function.mysql_free_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_use_result;, &function.mysql_real_query;,
+      &function.mysql_field_count;
+    </para>
+  </refsect1>
+</refentry>

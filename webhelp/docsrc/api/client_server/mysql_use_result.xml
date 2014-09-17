@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_use_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_use_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_use_result</refname>
+    <refpurpose>Initiate an unbuffered result set retrieval</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_RES *</type>
+      <methodname>mysql_use_result</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Used to initiate the retrieval of a result set from the last query executed
+      using the &function.mysql_real_query; function on the database connection.
+      Either this or the &function.mysql_store_result; function must be called
+      before the results of a query can be retrieved, and one or the other must be
+      called to prevent the next query on that database connection from failing.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns an unbuffered result set or NULL if an error occured.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The &function.mysql_use_result; function does not transfer the entire result
+        set. Hence several functions like &function.mysql_num_rows; or
+        &function.mysql_data_seek; cannot be used.
+      </para>
+      <para>
+        &function.mysql_use_result; will block the current connection until all
+        result sets are retrieved or result set was released
+        by&function.mysql_free_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_store_result;, &function.mysql_free_result;
+    </para>
+  </refsect1>
+</refentry>

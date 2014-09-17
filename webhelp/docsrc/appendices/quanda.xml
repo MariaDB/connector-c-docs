@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appendix xml:id="appendix.faq" xmlns="http://docbook.org/ns/docbook">
+  <title>
+    Frequently asked questions (FAQ)
+  </title>
+  <qandaset defaultlabel="number">
+    <?dbhtml toc="1" ?>
+    <qandaentry>
+      <question>
+        <para>
+          What is the difference between connection to <constant>localhost</constant> and <constant>127.0.0.1</constant>?
+        </para>
+      </question>
+      <answer>
+        <para>
+          If you connect to <constant>localhost"</constant> a domain socket is used, but when you connect to
+          <constant>127.0.0.1</constant> an IP socket is used.
+          Domain sockets require that both client and server are running on the same system. Therefore they can avoid some checks and operations (like routing) and this makes them faster and lighter than IP sockets. So if you plan to communicate with processes on same host this is a better option than IP sockets.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>
+          I am getting the following error when I try to connect to MariaDB:
+          <errortext>Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock'</errortext>
+        </para>
+      </question>
+      <answer>
+        <para>
+          By default &product_name; uses the socket <filename>/tmp/mysql.sock</filename>. For using another socket please
+          choose on of the following options.
+          <itemizedlist>
+            <listitem>
+              Build &product_name; from source distribution and specify the definition of the your socket file in an additional parameter: cmake . -DMYSQL_UNIX_ADDR=/path/mysql.sock.
+            </listitem>
+            <listitem>
+              Specify the location of socket file in parameter <parameter>socket</parameter> when connecting to the server via the &function.mysql_real_connect; function.
+            </listitem>
+            <listitem>
+              Set the environment variable MYSQL_UNIX_PORT to the path of the socket file
+            </listitem>
+          </itemizedlist>
+        </para>
+      </answer>
+    </qandaentry>
+
+    <qandaentry>
+      <question>
+        <para>
+          When trying to insert a large blob in my table I'm getting a "package to large" error. 
+        </para>
+      </question>
+      <answer>
+        <para>
+          &product_name; and MariaDB Server communication buffer must be large enough to contain the entire statement.
+          By default the maximum size of the communication buffer is 1MB. If the length of your statement exceeds 1MB you
+          need to extend the communication buffer on client and server by
+          <itemizedlist>
+            <listitem>
+              setting the <parameter>max_allowed_packet</parameter> at server start up
+            </listitem>
+            <listitem>
+              or by setting the variable <parameter>max_allowed_packet</parameter> to an appropiate value, e.g. SET GLOBAL max_allowed_packet=20971520
+            </listitem>
+          </itemizedlist>
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>
+          Is MariaDB client library thread safe?
+        </para>
+      </question>
+      <answer>
+        <para>
+          Yes. All binaries are compiled with thread safety flag. On Unix/Linux
+          operating the mysqlclient_r library is provided for compatibility reasons
+          and symlinks to the thread safe library.
+        </para>
+      </answer>
+      <question>
+        <para>
+          How to get the last inserted unique id?
+        </para>
+      </question>
+      <answer>
+        <para>
+          Last unique inserted id will be returned by the function
+          &function.mysql_insert_id;.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>
+          After upgrading &product_name; to latest version several of my programs using libmariadb crash
+          or report an error <errortext>Packets out of order</errortext>. 
+        </para>
+      </question>
+      <answer>
+        <label>&nbsp;&nbsp;&nbsp;</label>
+        <para>
+          If you experience problems with binary (compiled) programs after upgrading your
+          &product_name; the programs are likely compiled with older headers. In this case
+          these programs need to be recompiled.
+        </para>
+      </answer>
+    </qandaentry>
+    <qandaentry>
+      <question>
+        <para>
+          How can I check if my connection uses SSL?
+        </para>
+      </question>
+      <answer>
+        <para>
+          The function &function.mysql_get_ssl_cipher; returns the SSL cipher for the current connection or NULL
+          if no SSL is in use.
+        </para>
+      </answer>
+    </qandaentry>
+
+  </qandaset>
+</appendix>

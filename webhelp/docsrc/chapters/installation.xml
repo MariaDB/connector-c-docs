@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chapter id="installation">
+ <title>
+  Installation
+ </title>
+ <section>
+  <title>
+   Windows operating systems
+  </title>
+  <para>
+   MariaDB client library supports the following windows versions:
+   <informaltable frame="none">
+    <tgroup cols="3" colsep="0" rowsep="0">
+<?dbhtml cellspacing="0" ?>
+<?dbhtml cellpadding="1" ?>
+     <thead>
+      <row>
+       <entry role="ma_table" colsep="0">Version</entry>
+       <entry role="ma_table" colsep="0">32-bit</entry>
+       <entry role="ma_table" colsep="0">64-bit</entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows 8</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows 2012 Server</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows 7</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows 2008 Server</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Vista</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows 2003 Server</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+      <row>
+       <entry role="ma_table" colsep="0">Microsoft Windows XP</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+       <entry role="ma_table" colsep="0">&#8226;</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+  </para>
+  <para>
+   The following sections describe how to install the MariaDB client library
+   from source packages or by using the binary packages.
+  </para>
+  <section>
+   <title>
+    Building from source
+   </title>
+   <procedure>
+    <title>
+     Prerequisites
+    </title>
+    <step>
+     <para>
+      Make sure that Microsoft Visual Studio 2012 (or newer) is installed on
+      your system. The Express version of Visual Studio will work too.
+     </para>
+    </step>
+    <step>
+     <para>
+      Download and install the following components:
+     </para>
+     <substeps>
+      <step>
+       Download and install CMake 2.8 (or higher version), available from &url.cmake.download;
+      </step>
+      <para>
+       Download and install the following optional components
+      </para>
+      <substeps>
+       <step>
+        OpenSSL libraries, available from &url.openssl.windows.download;.
+       </step>
+       <step>
+        In case you don't want to use the bundled zlib library, download and install 
+        Zlib library, available from &url.zlib.windows.download;. 
+       </step>
+       <step>
+        For building an executable MSI installation binary, download and install the Wix Toolset, available at
+        &url.wix.download;
+       </step>
+      </substeps>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Make sure that cmake and required libraries are in your
+      <envar>PATH</envar>
+      environment variable. The
+      <envar>PATH</envar>
+      can be either set in command prompt or in system settings.
+     </para>
+    </step>
+   </procedure>
+   <procedure>
+    <title>
+     Getting the source code
+    </title>
+    <step>
+     <para>
+      Download the source code package from &url.mariadb.download; or obtain
+      latest development version from bazaar repository on launchpad.net.
+     </para>
+     <substeps>
+      <step>
+       For downloading the repository from launchpad.net you need to install bazaar, available at &url.bzr.download;.
+      </step>
+      <step>
+       <para>
+        Checkout the repository
+       </para>
+       <synopsis>bzr branch lp:mariadb-native-client mariadb_client</synopsis>
+       <para>
+        or extract the source code package in a separate directory on your hard
+        disk.
+       </para>
+      </step>
+     </substeps>
+    </step>
+   </procedure>
+   <procedure>
+    <title>
+     Creating make files
+    </title>
+    <step>
+     <para>
+      Open a command prompt and change to the directory which contains the
+      MariaDB client library sources. If you prefer to build in a separate
+      directory change to your build directory.
+     </para>
+    </step>
+    <step>
+     <para>
+      Create your make- or solution files with cmake.
+     </para>
+     <synopsis>cmake [directory] -[Doption]..</synopsis>
+     <para>
+      CMake supports the followig build options:
+      <informaltable frame="none">
+       <caption>Build types</caption>
+       <tgroup cols="2" colsep="0" rowsep="0">
+<?dbhtml cellspacing="0" ?>
+<?dbhtml cellpadding="1" ?>
+        <thead>
+         <row>
+          <entry role="ma_table" colsep="0">Build type</entry>
+          <entry role="ma_table" colsep="0">Description</entry>
+         </row>
+        </thead>
+        <tbody>
+         <row>
+          <entry role="ma_table" colsep="0">-DCMAKE_BUILD_TYPE=Release</entry>
+          <entry role="ma_table" colsep="0">Creates a release version without debug symbols and information</entry>
+         </row>
+         <row>
+          <entry role="ma_table" colsep="0">-DCMAKE_BUILD_TYPE=RelWithDebInfo</entry>
+          <entry role="ma_table" colsep="0">Creates a optimized version without some basic debug information</entry>
+         </row>
+         <row>
+          <entry role="ma_table" colsep="0">-DCMAKE_BUILD_TYPE=Debug</entry>
+          <entry role="ma_table" colsep="0">Creates a non optimized version which can be debugged</entry>
+         </row>
+        </tbody>
+       </tgroup>
+      </informaltable>
+      <informaltable frame="none">
+       <caption>Build features</caption>
+       <tgroup cols="2" colsep="0" rowsep="0">
+<?dbhtml cellspacing="0" ?>
+<?dbhtml cellpadding="1" ?>
+        <thead>
+         <row>
+          <entry role="ma_table" colsep="0">Feature</entry>
+          <entry role="ma_table" colsep="0">Description</entry>
+         </row>
+        </thead>
+        <tbody>
+         <row>
+          <entry role="ma_table" colsep="0">-DWITH_OPENSSL=On/Off</entry>
+          <entry role="ma_table" colsep="0">Support for encrypted connections.
+                       Requires installation of OpenSSL libraries.
+                    </entry>
+         </row>
+         <row>
+          <entry role="ma_table" colsep="0">-DWITH_SQLITE=On/Off</entry>
+          <entry role="ma_table" colsep="0">Enables experimental sqlite support via MariaDB API.</entry>
+         </row>
+         <row>
+          <entry role="ma_table" colsep="0">-DWITH_EXTERNAL_ZLIB=On/Off</entry>
+          <entry role="ma_table" colsep="0">uses external zlib library instead of bundled zlb library.</entry>
+         </row>
+        </tbody>
+       </tgroup>
+      </informaltable>
+     </para>
+     <example>
+      <para>
+       Build with SSL support
+      </para>
+      <synopsis>C:\work\build>cmake C:\work\mariadb-client -DCMAKE_BUILD_TYPE=Release -DWITH_OPENSSL=On</synopsis>
+     </example>
+    </step>
+   </procedure>
+   <procedure>
+    <title>
+     Build MariaDB client library
+    </title>
+    <step>
+     <para>
+      Start Visual Studio, load the solution file and build the project
+     </para>
+    </step>
+    <stepalternatives>
+     <step>
+      In case cmake was executed with NMake Makefiles generator, start building the project by executig nmake.
+     </step>
+    </stepalternatives>
+   </procedure>
+   <note>
+    &reftitle.notes;
+    <para>
+     CMake allows you to specify a generator name: e.g. for building the MariaDB
+     client library with
+     <command>nmake</command>
+     you need pass the parameter
+     <parameter>-G "NMake Makefiles"</parameter>
+     .
+    </para>
+   </note>
+  </section>
+  <section>
+   <title>
+    Installing Binaries
+   </title>
+   <para>
+    MariaDB client library binaries can be installed either by self executable
+    msi installation package or by the binary distribution which is packed in
+    zip format.
+   </para>
+   <para>
+    Both packages are available from the download site at
+    &url.mariadb.download;
+   </para>
+  </section>
+ </section>
+</chapter>

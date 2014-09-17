@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preface xml:id="preface" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://docbook.org/ns/docbook">
+ <title>
+  Preface
+ </title>
+ <para>
+  <emphasis role="bold">What is &product_name;?</emphasis>
+ </para>
+ <para>
+  The &product_name; (also known as libmariadb) is the C application
+  programmers interface to MariaDB, Percona and MySQL database servers. It
+  contains a collection of functions that allow client programs to send
+  statements to the MariaDB server and to receive data of these statements. The
+  MariaDB client library is licensed under the LGPL License Version 2. The
+  latest version is presently available at
+  <link xlink:href="&url.license.lgpl;">&url.license.lgpl;</link>
+  .
+ </para>
+ <para>
+  &product_name; can be also used as an underlying layer for other
+  application and programm interfaces like PHP, Perl, Python and others.
+ </para>
+ <para>
+  &product_name; has three different parts:
+ </para>
+ <itemizedlist mark="opencircle">
+  <listitem>
+   <para>
+    Client server communication API
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Character set and conversion API
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Dynamic columns API
+   </para>
+  </listitem>
+<!--
+  <listitem>
+   <para>
+    Asynchronous communication API
+   </para>
+  </listitem>
+-->
+ </itemizedlist>
+ <para>
+  The function reference contains examples for each function, the source code
+  can be found in the example directory of the documentation package.
+ </para>
+ <para>
+  You can download this manual from the Mariadb website at
+  <link
+  xlink:href="&url.mariadb.docs.download;">&url.mariadb.docs.download;</link>
+  .
+ </para>
+ <para>
+  <emphasis role="strong">History</emphasis>
+ </para>
+ <para>
+  Version 1.0 of &product_name; was released in December 2012. It
+  was built on top of the MySQL 3.23.58 LGPL library. It
+  uses the prepared statement interface of PHP's mysqlnd extension and the iconv
+  library for character set encoding and conversion.
+ </para>
+ <para>
+  It was written as an powerful alternative to the GPL licensed MySQL client
+  library, since restrictons of the GPL license don't allow to use it in closed
+  source applications or applications which were published under another
+  incompatible open source license.
+ </para>
+ <para>
+  <emphasis role="strong">Differences between &product_name; and MySQL client libraries</emphasis>
+ </para>
+ <para>
+  <informaltable frame="none">
+   <tgroup cols="3" colsep="0" rowsep="0">
+<?dbhtml cellspacing="0" ?>
+<?dbhtml cellpadding="1" ?>
+    <thead>
+     <row>
+      <entry role="ma_table" colsep="0">Feature</entry>
+      <entry role="ma_table" colsep="0">&product_name;</entry>
+      <entry role="ma_table" colsep="0">MySQL client library</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry role="ma_table">Compressed protocol</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">SSL</entry>
+      <entry role="ma_table">&check; (open ssl)</entry>
+      <entry role="ma_table">&check; (yassl or openssl)</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Shared memory (Windows)</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Named pipe (Windows)</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">IPV6</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Support for versions prior 4.1</entry>
+      <entry role="ma_table"></entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+
+     <row>
+      <entry role="ma_table">Character set conversion</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check; (limited/internal)</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Asynchronous API</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table"></entry>
+     </row>
+     <row>
+      <entry role="ma_table">Dynamic columns</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table"></entry>
+     </row>
+     <row>
+      <entry role="ma_table">Thread safety</entry>
+      <entry role="ma_table">&check;</entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Embedded server</entry>
+      <entry role="ma_table"></entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+     <row>
+      <entry role="ma_table">Support for MySQL commercial plugins</entry>
+      <entry role="ma_table"></entry>
+      <entry role="ma_table">&check;</entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </informaltable>
+ </para>
+</preface>
+

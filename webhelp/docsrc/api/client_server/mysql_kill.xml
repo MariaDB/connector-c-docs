@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_kill" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_kill</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_kill</refname>
+    <refpurpose>Asks the server to kill a connection thread.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_kill</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned</type>
+        <parameter>long</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      This function is used to ask the server to kill a MariaDB thread specified by
+      the processid parameter. This value must be retrieved by
+      <command>SHOW PROCESSLIST</command>
+      or if the own connection should be killed by &function.mysql_thread_id;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>long</parameter></term>
+          <listitem><para>process id</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 0 on success, otherwise nonzero.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        To stop a running command without killing the connection use
+        <command>KILL QUERY</command>
+        .
+      </para>
+      <para>
+        &function.mysql_kill; function only kills a connection, it doesn't free any
+        memory - this must be done explicitly by calling &function.mysql_close;
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_thread_id;, &function.mysql_close;
+    </para>
+  </refsect1>
+</refentry>

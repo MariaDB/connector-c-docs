@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_dyncol_list_num" display-name="1">
+  <refmeta>
+    <refentrytitle>mariadb_dyncol_list_num</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_dyncol_list_num</refname>
+    <refpurpose>List numeric column keys inside a dynamic column object</refpurpose>
+  </refnamediv>
+  <refsect1></refsect1>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mariadb_dyncol_list_named</methodname>
+      <methodparam>
+        <type>DYNAMIC_COLUMN *</type>
+        <parameter>str</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint *</type>
+        <parameter>column_count</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint **</type>
+        <parameter>column_keys</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Lists column keys inside a dynamic column object. The list is returned in
+      <parameter>column_keys</parameter>
+      while the number of elements is returned in
+      <parameter>column_count</parameter>
+      .
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <parameter>str</parameter>
+          </term>
+          <listitem><para>A pointer to a dynamic column.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_keys</parameter>
+          </term>
+          <listitem><para>Number of column_keys</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_keys</parameter>
+          </term>
+          <listitem><para>An array of numeric column keys.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 0 or positive value on success, a nagative value on error.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        This function allocates memory for the
+        <parameter>column_key</parameter>
+        array. This memory must be explicitly freed by the function
+        <function>free()</function>
+        to prevent memory leakage.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mariadb_dyncol_list_named; &function.mariadb_dyncol_column_count;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+  </refsect1>
+</refentry>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_num_rows" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_num_rows</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_num_rows</refname>
+    <refpurpose>Returns the number of rows in a prepared statement result set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_ulonglong</type>
+      <methodname>mysql_stmt_num_rows</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the number of rows in the result set. The use of
+      &function.mysql_stmt_num_rows; depends on whether or not you used
+      &function.mysql_stmt_store_result; to buffer the entire result set in the
+      statement handle.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The number of rows in a result set of a prepared statement.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        If you use &function.mysql_stmt_store_result;,
+        &function.mysql_stmt_num_rows; may be called immediately.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_store_result;
+    </para>
+  </refsect1>
+</refentry>

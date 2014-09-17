@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_server_version" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_server_version</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_server_version</refname>
+    <refpurpose>Get numeric server version</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned long</type>
+      <methodname>mysql_get_server_version</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns an integer representing the version of connected server
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A long integer containting the version of the connected server.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The form of the version number is
+        <parameter>VERSION_MAJOR</parameter>
+        * 10000 +
+        <parameter>VERSION_MINOR</parameter>
+        * 100 +
+        <parameter>VERSION_PATCH</parameter>
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_server_info;
+    </para>
+  </refsect1>
+</refentry>

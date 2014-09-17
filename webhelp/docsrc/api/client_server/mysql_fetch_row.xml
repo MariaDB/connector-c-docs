@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_fetch_row" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_fetch_row</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_fetch_row</refname>
+    <refpurpose>Get a row from result set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_ROW</type>
+      <methodname>mysql_fetch_row</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>result</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Fetches one row of data from the result set and returns it as an array of
+      char pointers (
+      <parameter>MYSQL_ROW</parameter>
+      ), where each column is stored in an offset starting from 0 (zero). Each
+      subsequent call to this function will return the next row within the result
+      set, or
+      <parameter>NULL</parameter>
+      if there are no more rows.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>result</parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns an array of strings that corresponds to the fetched row or NULL if
+      there are no more rows in result set.
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Im case a column contains a
+        <parameter>NULL</parameter>
+        value the corresponding char pointer will be set to
+        <parameter>NULL</parameter>
+      </para>
+      <para>
+        Memory associated to MYSQL_ROW will be freed when calling
+        &function.mysql_free_result; function.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_use_result;, &function.mysql_store_result;
+    </para>
+  </refsect1>
+</refentry>

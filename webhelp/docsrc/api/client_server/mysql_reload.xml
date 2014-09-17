@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_reload" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_reload</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_reload</refname>
+    <refpurpose>reloads server grant tables</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_reload</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      The
+      <function>mysql_reload()</function>
+      reloads database grant tables.
+    </para>.
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, otherweise non zero.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        <function>mysql_reload()</function>
+        is a macro for &function.mysql_refresh;, defined in
+        <filename>mysql.h</filename>
+        :
+      </para>
+      <synopsis language="C">
+        #define mysql_reload(mysql) mysql_refresh((mysql),REFRESH_GRANT)
+      </synopsis>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_refresh;
+    </para>
+  </refsect1>
+</refentry>

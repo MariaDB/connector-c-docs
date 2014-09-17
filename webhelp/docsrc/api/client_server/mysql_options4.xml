@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_options4" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_options4</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_options4</refname>
+    <refpurpose>Set options (with additional 4th parameter)</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_options4</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>enum</type>
+        <parameter>mysql_option</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const void *</type>
+        <parameter>arg1</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const void *</type>
+        <parameter>arg2</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      This function is deprecated, please use &function.mysql_optionsv; instead. 
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_optionsv;, &function.mysql_options;
+    </para>
+  </refsect1>
+</refentry>

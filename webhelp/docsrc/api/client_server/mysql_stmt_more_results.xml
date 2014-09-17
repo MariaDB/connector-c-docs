@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_more_results" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_more_results</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_more_results</refname>
+    <refpurpose>Check if there are any more query results from a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_more_results</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Indicates if one or more result sets are available from a previous call to
+      &function.mysql_stmt_execute;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>A statement which was previosly executed by &function.mysql_stmt_execute;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 1 if more result sets are available, otherwise zero.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Prepared statements don't support execution of multi statements.
+      </para>
+      <para>
+        Multiple result sets can be obtained by executing a stored procedure
+      </para>
+      <para>
+        When using prepared statements out parameters for stored procedures are
+        returned as a result set.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_execute;, &function.mysql_stmt_store_result;,
+      &function.mysql_stmt_next_result;
+    </para>
+  </refsect1>
+</refentry>

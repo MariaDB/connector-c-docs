@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision: 323624 $ -->
+<section>
+  &reftitle.data_structures;
+  <sect1>
+    <title>
+      DYNAMIC_COLUMN
+    </title>
+    <para>
+      DYNAMIC_COLUMN represents a packed dynamic column blob. It is essentially a
+      string-with-length.
+    </para>
+    <programlisting>
+      <![CDATA[typedef struct st_dynamic_string
+      {
+      char *str;
+      size_t length,max_length,alloc_increment;
+      } DYNAMIC_STRING;
+
+      typedef DYNAMIC_STRING DYNAMIC_COLUMN;]]>
+    </programlisting>
+  </sect1>
+  <sect1>
+    <title>
+      DYNAMIC_COLUMN_VALUE
+    </title>
+    <para>
+      Dynamic columns blob stores {name, value} pairs. DYNAMIC_COLUMN_VALUE
+      structure is used to represent the value in accessible form.
+    </para>
+    <programlisting>
+      <![CDATA[struct st_dynamic_column_value
+      {
+      DYNAMIC_COLUMN_TYPE type;
+      union
+      {
+      long long long_value;
+      unsigned long long ulong_value;
+      double double_value;
+      struct {
+      MYSQL_LEX_STRING value;
+      CHARSET_INFO *charset;
+      } string;
+      struct {
+      decimal_digit_t buffer[DECIMAL_BUFF_LENGTH];
+      decimal_t value;
+      } decimal;
+      MYSQL_TIME time_value;
+      } x;
+      };
+
+      typedef struct st_dynamic_column_value DYNAMIC_COLUMN_VALUE;]]>
+    </programlisting>
+  </sect1>
+  <sect1>
+    <title>
+      MY_CHARSET_INFO
+    </title>
+    <para>
+      Contains information about the current character set used by the connection.
+      The information can be obtained by the
+      &function.mysql_get_character_set_info; function.
+    </para>
+    <programlisting>
+      <![CDATA[typedef struct character_set
+      {
+      unsigned int      number;     /* character set number              */
+      unsigned int      state;      /* character set state               */
+      const char        *csname;    /* character set name                */
+      const char        *name;      /* collation name                    */
+      const char        *comment;   /* comment (unused)                  */
+      const char        *dir;       /* character set directory (unused)  */
+      unsigned int      mbminlen;   /* min. length for multibyte strings */
+      unsigned int      mbmaxlen;   /* max. length for multibyte strings */
+      } MY_CHARSET_INFO;]]>
+    </programlisting>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL
+    </title>
+    <para>
+      A structure representing a connection to a database server. The structure
+      will be allocated and/or initialized by the &function.mysql_init; function
+      and closed by the &function.mysql_close; function.
+    </para>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        It's not recommended to access members of this structure in your client
+        program. They might be removed or renamed in later versions. Instead use the
+        corresponding API functions.
+      </para>
+      <para>
+        A connection can be shared between multiple threads with the limitation that
+        they don't send and receive data at the same time. This must be ensured by
+        using mutex locks.
+      </para>
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_BIND
+    </title>
+    <para>
+      A structure to bind input or output variables to a prepared statement by
+      &function.mysql_stmt_bind_param; or &function.mysql_stmt_bind_result;
+      functions.
+    </para>
+    <programlisting>
+      <![CDATA[typedef struct st_mysql_bind
+      {
+      unsigned long  *length;             /* output length pointer */
+      my_bool        *is_null;            /* Pointer to null indicator */
+      void           *buffer;             /* buffer to get/put data */
+      my_bool        *error;              /* pointer to indicate errors */
+      unsigned long  buffer_length;
+      enum enum_field_types buffer_type;  /* buffer type */
+      my_bool        is_unsigned;         /* set if integer type is unsigned */
+      my_bool        is_null_value;       /* Used if is_null is 0 */
+      /* internal values */
+      ...
+      } MYSQL_BIND;]]>
+    </programlisting>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        A
+        <structname>MYSQL_BIND</structname>
+        structure should be initialized with zero values before assigning values to
+        it's members.
+      </para>
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_FIELD
+    </title>
+    <para>
+      Contains metadata information about a column. The structure can be obtained
+      by the &function.mysql_fetch_field;, &function.mysql_fetch_fields; or
+      &function.mysql_fetch_field_direct; functions.
+    </para>
+    <programlisting>
+      <![CDATA[typedef struct st_mysql_field {
+      char *name;                /* Name of column or alias */
+      char *org_name;            /* Name of original column (added after 3.23.58) */
+      char *table;               /* Table of column/alias if column was a field */
+      char *org_table;           /* Name of original table */
+      char *db;                  /* table schema  */
+      char *catalog;             /* table catalog  */
+      char *def;                 /* Default value (set by mysql_list_fields) */
+      unsigned long length;      /* Width of column */
+      unsigned long max_length;  /* Max width of selected set */
+      unsigned int name_length;
+      unsigned int org_name_length;
+      unsigned int table_length;
+      unsigned int org_table_length;
+      unsigned int db_length;
+      unsigned int catalog_length;
+      unsigned int def_length;
+      unsigned int flags;         /* Div flags */
+      unsigned int decimals;      /* Number of decimals in field */
+      unsigned int charsetnr;     /* character set number */
+      enum enum_field_types type; /* Type of field. Se mysql_com.h for types */
+      void *extension;            /* internal use */
+      } MYSQL_FIELD;]]>
+    </programlisting>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        Field values are not members of this structure. They will be obtained by
+        <structname>MYSQL_ROW</structname>
+        structure.
+      </para>
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_FIELD_OFFSET
+    </title>
+    <para>
+      An offset within a field list starting with offset zero used by
+      &function.mysql_field_seek; function.
+    </para>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_RES
+    </title>
+    <para>
+      A structure representing a result set from a previously executed statement.
+      The structure will be obtained by &function.mysql_use_result; or
+      &function.mysql_store_result; functions. The MYSQL_RES structure will be used
+      to fetch fields and data from a result set.
+    </para>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        The server will always return a result set for
+        <command>SELECT</command>
+        ,
+        <command>SHOW</command>
+        <command>CALL</command>
+        ,
+        <command>EXPLAIN</command>
+        ,
+        <command>DESCRIBE</command>
+        statements, even if no records were found. In this case the result set will
+        only contain metadata information.
+      </para>
+      <para>
+        Large result sets may allocate a lot of memory. Therefore it is essential to
+        free the result set as soon all data was fetched and processed.
+      </para>
+      <para>
+        A previously fetched row (see
+        <structname>MYSQL_ROW</structname>
+        ) becomes invalid when the result set stucture was freed.
+      </para>
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_ROW
+    </title>
+    <para>
+      An array of character pointers representing an array of column values.
+    </para>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      Character pointers are not necessarily null terminated. In case you will retrieve binary data you need to obtain
+      length information from <structname>MYSQL_FIELD</structname> structure.
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_STMT
+    </title>
+    <para>
+      A structure representing a prepared statement which was allocated by
+      &function.mysql_stmt_init; and prepared by &function.mysql_stmt_prepare;
+      function. A prepared statement can be used to efficiently execute this
+      statement multiple times.
+    </para>
+  </sect1>
+  <sect1>
+    <title>
+      MYSQL_TIME
+    </title>
+    <para>
+      A structure representing internal time format which is used for prepared
+      statements and dynamic columns.
+    </para>
+    <programlisting>
+      <![CDATA[typedef struct st_mysql_time
+      {
+      unsigned int year;
+      unsigned int month;
+      unsigned int day;
+      unsigned int hour;
+      unsigned int minute;
+      unsigned int second;
+      unsigned long second_part;
+      my_bool  neg;                              /* negative value */
+      enum enum_mysql_timestamp_type time_type;  /* mysql timestamp type */
+      } MYSQL_TIME;]]>
+    </programlisting>
+  </sect1>
+</section>

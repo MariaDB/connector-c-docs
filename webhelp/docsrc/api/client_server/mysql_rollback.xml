@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_rollback" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_rollback</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_rollback</refname>
+    <refpurpose>Rolls back current transaction</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_rollback</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Rolls back the current transaction for the database.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        &function.mysql_rollback; will not work as expected if autocommit mode was
+        set or the storage engine does not support transactions.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_commit;, &function.mysql_autocommit;
+    </para>
+  </refsect1>
+</refentry>

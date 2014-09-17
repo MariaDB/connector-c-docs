@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_commit" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_commit</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_commit</refname>
+    <refpurpose>Commits the currenct transaction</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_commit</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Commits the current transaction for the specified database connection.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter> mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          Executing &function.mysql_commit; will not affected the behaviour of
+          autocommit. This means, any upsert statements following
+          &function.mysql_commit; will be rolled back, when the connection gets closed
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Instead of using the API function <function>mysql_commit()</function> you can also execute the
+          SQL statements <command>COMMIT</command> or <command>END</command>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_rollback;, &function.mysql_autocommit;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    &reftitle.example;
+    &examples.mysql_commit;
+    <para>
+      Output:
+    </para>
+    <!-- &examples.mysql_commit.out; -->
+  </refsect1>
+</refentry>

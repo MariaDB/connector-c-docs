@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_query" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_query</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_query</refname>
+    <refpurpose>performs a query on the database</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_query</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>query</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Performs a statement pointed to by the null terminate string
+      <parameter>query</parameter>
+      against the database. Contrary to &function.mysql_real_query;
+      &function.mysql_query; is not binary safe.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>query</parameter></term>
+          <listitem><para>A null terminated string containing the statement to be performed.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, non zero on failure
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        For executing multi statements the statements within the null terminated
+        string statements must be separated by a semicolon.
+      </para>
+      <para>
+        If your statement contains binary data you should use
+        &function.mysql_real_query; or escape your data with
+        &function.mysql_hex_string;
+      </para>
+      <para>
+        To determine if a statement returned a result set use the function
+        &function.mysql_num_fields;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_query;, &function.mysql_num_fields;,
+      &function.mysql_hex_string;, &function.mysql_use_result;
+      &function.mysql_store_result;
+    </para>
+  </refsect1>
+</refentry>

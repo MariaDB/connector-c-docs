@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_store_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_store_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_store_result</refname>
+    <refpurpose>Transfers a result set from a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_stmt_store_result</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      You must call &function.mysql_stmt_store_result; for every query that
+      successfully produces a result set (
+      <command>SELECT, SHOW, DESCRIBE, EXPLAIN</command>
+      ), and only if you want to buffer the complete result set by the client, so
+      that the subsequent &function.mysql_stmt_fetch; call returns buffered data.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        You can detect whether the statement produced a result set by checking the
+        return value of &function.mysql_stmt_result_metadata; function.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    &function.mysql_stmt_result_metadata;,
+    &function.mysql_stmt_fetch;
+  </refsect1>
+</refentry>

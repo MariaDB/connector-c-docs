@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_client_info" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_client_info</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_client_info</refname>
+    <refpurpose>Get client library info</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_get_client_info</methodname>
+      <methodparam>
+        <type>void</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns a string representing the client library version.
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A string representing the version of the client library
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        To obtain the numeric value of the client library version use
+        &function.mysql_get_client_version;
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_client_version;, &function.mysql_get_host_info;,
+      &function.mysql_get_proto_info;
+    </para>
+  </refsect1>
+</refentry>

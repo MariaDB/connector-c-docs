@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_dyncol_create_many_named" display-name="0" display-title="1">
+  <refmeta>
+    <refentrytitle>mariadb_dyncol_create_many_named</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_dyncol_create_many_named</refname>
+    <refpurpose>Create a packed dynamic string from an array of key/value pairs</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>enum enum_dyncol_func_result</type>
+      <methodname>mariadb_dyncol_create_many_named</methodname>
+      <methodparam>
+        <type>DYNAMIC_COLUMN *</type>
+        <parameter>str</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint</type>
+        <parameter>column_count</parameter>
+      </methodparam>
+      <methodparam>
+        <type>MYSQL_LEX_STRING *</type>
+        <parameter>column_keys</parameter>
+      </methodparam>
+      <methodparam>
+        <type>DYAMIC_COLUMN_VALUE *</type>
+        <parameter>column_values</parameter>
+      </methodparam>
+      <methodparam>
+        <type>my_bool</type>
+        <parameter>new_column</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Creates a packed dynamic string from an array of key/value pairs.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <parameter>str</parameter>
+          </term>
+          <listitem><para>A pointer to a dynamic column.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>  
+            <parameter>column_cont</parameter>
+          </term>
+          <listitem><para>Number of columns</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_keys</parameter>
+          </term>
+          <listitem><para>An array of named column keys</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_vals</parameter>
+          </term>
+          <listitem><para>An array of column values</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>      
+            <parameter>new_column</parameter>
+          </term>
+          <listitem><para>Indicates if the dynamic column should be initialized before creating columns</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 0 or positive value on success, anagative value on error.
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.1
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;  
+      <para>
+        Before creating a dynamic column it must be either zero initialized or
+        parameter
+        <parameter>new_column</parameter>
+        must be set.
+      </para>
+      <para>
+        If the
+        <parameter>column_key</parameter>
+        array contains non unique keys the function will return an error.
+      </para>
+      <para>
+        To prevent leaking of memory a dynamic column has to be freed by the
+        &function.mariadb_dyncol_free; function.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mariadb_dyncol_create_many_num;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+    <!--
+    <xi:include href="&example_path;/mysql_affected_rows.c" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    The above example will output:
+    <programlisting><xi:include href="&example_path;/mysql_affected_rows.out" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/></programlisting> -->
+  </refsect1>
+</refentry>

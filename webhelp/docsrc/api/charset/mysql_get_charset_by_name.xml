@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_charset_by_name" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_charset_by_name</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_charset_by_name</refname>
+    <refpurpose>Returns a specified character set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>CHARSET_INFO *</type>
+      <methodname>mysql_get_charset_by_name</methodname>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>csname</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      returns a character set specified by
+      <parameter>csname</parameter>
+      .
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>csname</parameter></term>
+          <listitem><para>Character set name</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns a pointer to
+      <structname>CHARSET_INFO</structname>
+      or NULL if the specified character set could not be found.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        The function searches case sensitive. Character set names are always defined
+        in lower case.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_charset_by_nr;
+    </para>
+  </refsect1>
+</refentry>

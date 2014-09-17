@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section>
+ <para>
+  The MariaDB client library (also known as libmariadb) is the C application
+  programmers interface to MariaDB. It contains a collection of functions that
+  allow client programs to send statements to the MariaDB server and to receive
+  data of these statements.
+ </para>
+ <para>
+  The MariaDB client library is licensed under the LGPL License Version 2. It's
+  derived from the MySQL 3.23.58 client library and PHP's mysqlnd extension. It
+  is fully binary compatible to MySQL client library, so it's possible to
+  communicate with database servers from other vendors. Since the MariaDB server
+  offers more functionality not all functions might be supported by databases
+  from other vendors.
+ </para>
+ <para>
+  It can be also used as an underlying layer for other application and programm
+  interfaces like PHP, Perl, Python and others.
+ </para>
+<!--
+<para>
+The function reference contains examples for each function, the source code can be found in the example directory of the documentation package.
+</para>
+-->
+</section>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_proto_info" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_proto_info</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_proto_info</refname>
+    <refpurpose>Returns the protocol version number</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned int</type>
+      <methodname>mysql_get_proto_info</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the protocol version number for the specified connection
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The protocol version for the used connection.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The client library doesn't support protocol version 9 and prior.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_host_info;
+    </para>
+  </refsect1>
+</refentry>

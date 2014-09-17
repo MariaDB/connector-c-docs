@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_num_fields" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_num_fields</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_num_fields</refname>
+    <refpurpose>returns number of fields in a result set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned int</type>
+      <methodname>mysql_num_fields</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns number of fields in a specified result set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter></parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The number of fields in a result set.
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_fetch_field;
+    </para>
+  </refsect1>
+</refentry>

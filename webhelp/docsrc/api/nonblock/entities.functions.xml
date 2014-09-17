@@ -1,0 +1,10 @@
+<!--
+Autogeerated file - do not change this file manually!
+-->
+&api.nonblock.mysql_get_socket;
+&api.nonblock.mysql_get_timeout_value;
+&api.nonblock.mysql_get_timeout_value_ms;
+&api.nonblock.mysql_real_connect_start;
+&api.nonblock.mysql_real_connect_cont;
+&api.nonblock.mysql_real_query_start;
+&api.nonblock.mysql_real_query_cont;

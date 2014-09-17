@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_convert_string" display-name="0">
+  <refmeta>
+    <refentrytitle>mariadb_convert_string</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_convert_string</refname>
+    <refpurpose>Codeset conversion function</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>size_t</type>
+      <methodname>mariadb_convert_string</methodname>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>source</parameter>
+      </methodparam>
+      <methodparam>
+        <type>size_t</type>
+        <parameter>source_length</parameter>
+      </methodparam>
+      <methodparam>
+        <type>CHARSET_INFO *</type>
+        <parameter>source_cs</parameter>
+      </methodparam>
+      <methodparam>
+        <type>char *</type>
+        <parameter>dest</parameter>
+      </methodparam>
+      <methodparam>
+        <type>size_t</type>
+        <parameter>dest_length</parameter>
+      </methodparam>
+      <methodparam>
+        <type>CHARSET_INFO *</type>
+        <parameter>dest_cs</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint *</type>
+        <parameter>errorcode</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Converts a sequence of characters (string) from one character set into a
+      seqence of corresponing characters in another character set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>source</parameter></term>
+          <listitem><para>Sequence of characters (source)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>source_length</parameter></term>
+          <listitem><para>Source length in bytes</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>source_cs</parameter></term>
+          <listitem><para>Source character set</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <row>
+      <entry>source</entry>
+      <entry>Sequence of characters (Destination)</entry>
+    </row>
+    <row>
+      <entry>source_length</entry>
+      <entry>Destination length in bytes</entry>
+    </row>
+    <row>
+      <entry>source_cs</entry>
+      <entry>Destination character set</entry>
+    </row>
+    <row>
+      <entry>errorcode</entry>
+      <entry>Error code</entry>
+    </row>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Length of converted characters in destination (measured in bytes) or -1 if an
+      error occurs.
+    </para>
+    <table frame="none">
+      <caption>Error codes</caption>
+      <tgroup cols="3" colsep="0" rowsep="0">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="1" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Errorcode</entry>
+            <entry role="ma_table" colsep="0">Value</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">EILSEQ</entry>
+            <entry role="ma_table" align="right">42</entry>
+            <entry role="ma_table">Invalid character in source</entry>
+          </row>
+          <row>
+            <entry role="ma_table">E2BIG</entry>
+            <entry role="ma_table" align="right">7</entry>
+            <entry role="ma_table">Conversion didn't complete due to lack of space in destination buffer</entry>
+          </row>
+          <row>
+            <entry role="ma_table">EINVAL</entry>
+            <entry role="ma_table" align="right">22</entry>
+            <entry role="ma_table">Conversion is not supported, or an incomplete character at the end of source was found</entry>
+          </row>
+          <row>
+            <entry role="ma_table">ENFILE</entry>
+            <entry role="ma_table" align="right">23</entry>
+            <entry role="ma_table">Too many open files</entry>
+          </row>
+          <row>
+            <entry role="ma_table">ENOMEM</entry>
+            <entry role="ma_table" align="right">12</entry>
+            <entry role="ma_table">Not enough memory available</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        If a valid source character has no identical character in the destination
+        character set it will be replaced by a place holder (quesion mark)
+      </para>
+      <para>
+        Regardless of the character set length parameters are always measured in
+        bytes.
+      </para>
+      <para>
+        The types (
+        <type>char *</type>
+        ) of source and destination doesn't imply that these variables are
+        interpreted as zero terminated strings.
+      </para>
+    </itemizedlist>
+  </refsect1>
+</refentry>

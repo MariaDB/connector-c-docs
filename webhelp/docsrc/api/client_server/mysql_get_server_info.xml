@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_server_info" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_server_info</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_server_info</refname>
+    <refpurpose>Get server info</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_get_server_info</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Retrieves the server version
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns the server version or NULL on failure.
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        To obtain the numeric server version please use
+        &function.mysql_get_server_version;
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_server_version;, &function.mysql_get_client_info;
+    </para>
+  </refsect1>
+</refentry>

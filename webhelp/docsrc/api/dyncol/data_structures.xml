@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="ref.dyncol.datastructure">
+  &reftitle.data_structures;
+ <refentry id="struct.dynamic_column">
+  <refmeta>
+   <refentrytitle>DYNAMIC_COLUMN</refentrytitle>
+  </refmeta>
+   &version_1_1;
+   <refnamediv>
+   <refdescriptor>DYNAMIC_COLUMN</refdescriptor>
+   <refname>DYNAMIC_COLUMN</refname>
+   <refpurpose>packed dynamic column blob</refpurpose>
+  </refnamediv>
+  <para>
+   <structname>DYNAMIC_COLUMN</structname>
+   represents a packed dynamic column blob. It is essentially a
+   string-with-length.
+  </para>
+  <para>
+   <structname>DYNAMIC_COLUMN</structname>
+   is defined in
+   <filename>ma_dyncol.h</filename>
+  </para>
+  <programlisting>
+<![CDATA[typedef struct st_dynamic_string
+{
+  char *str;
+  size_t length,max_length,alloc_increment;
+} DYNAMIC_STRING;
+
+typedef DYNAMIC_STRING DYNAMIC_COLUMN;]]>
+  </programlisting>
+ </refentry>
+ <refentry id="struct.dynamic_column_vale">
+  <refmeta>
+   <refentrytitle>DYNAMIC_COLUMN_VALUE</refentrytitle>
+  </refmeta>
+   &version_1_1;
+   <refnamediv>
+   <refdescriptor>DYNAMIC_COLUMN_VALUE</refdescriptor>
+   <refname>DYNAMIC_COLUMN_VALUE</refname>
+   <refpurpose>Dynamic columns blob stores for key/value pairs.</refpurpose>
+  </refnamediv>
+  <para>
+   <structname>DYNAMIC_COLUMN_VALUE</structname>
+   stores key/value pairs.
+   <structname>DYNAMIC_COLUMN_VALUE</structname>
+   structure is used to represent the value in accessible form
+  </para>
+  <para>
+   <structname>DYNAMIC_COLUMN</structname>
+   is defined in
+   <filename>ma_dyncol.h</filename>
+  </para>
+  <programlisting>
+<![CDATA[struct st_dynamic_column_value
+{
+  DYNAMIC_COLUMN_TYPE type;
+  union
+  {
+    long long long_value;
+    unsigned long long ulong_value;
+    double double_value;
+    struct {
+      MYSQL_LEX_STRING value;
+      CHARSET_INFO *charset;
+    } string;
+    struct {
+      decimal_digit_t buffer[DECIMAL_BUFF_LENGTH];
+      decimal_t value;
+    } decimal;
+    MYSQL_TIME time_value;
+  } x;
+};
+
+typedef struct st_dynamic_column_value DYNAMIC_COLUMN_VALUE;]]>
+  </programlisting>
+ </refentry>
+</section>

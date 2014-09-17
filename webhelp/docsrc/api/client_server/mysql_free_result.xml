@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_free_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_free_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_free_result</refname>
+    <refpurpose>Frees the memory associated to a result set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_free_result</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>result</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Frees the memory associated to the specified result set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>result</parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      void
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        You should always free your result set with &function.mysql_free_result; as
+        soon it's not needed anymore
+      </para>
+      <para>
+        Row values obtained by a prior &function.mysql_fetch_row; call will become
+        invalid after calling &function.mysql_free_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_store_result;, &function.mysql_use_result;
+    </para>
+  </refsect1>
+</refentry>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_error" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_error</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_error</refname>
+    <refpurpose>Returns a string description for last statement error</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_stmt_error</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns a containing the error message for the most recently invoked
+      statement function that can succeed or fail.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A string that describes the error. An empty string if no error occurred.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Client error messages are listed in
+        <filename>errmsg.h</filename>
+        header file, server error messages are listed in
+        <filename>mysqld_error.h</filename>
+        header file of the server source distribution.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_errno;, &function.mysql_stmt_sqlstate;
+    </para>
+  </refsect1>
+</refentry>

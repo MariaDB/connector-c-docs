@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="ref.non_blocking_api">
+  <title>
+    Function reference
+  </title>
+  <para>
+    Here is a list of all functions in the non-blocking client API and their parameters. Apart from operating in a non-blocking way, they all work exactly the same as their non-blocking counterparts, so their exact semantics can be obtained from the documentation of the normal client API.
+  </para>
+  <para>
+    Not all functions are supported by all packages. Please refer to the version
+    information inside the function reference to check if the function is
+    supported. Some functionality like experimental features are disabled by
+    default and can be activated by build switches.
+  </para>
+  &api.nonblock.entities.functions;
+</section>

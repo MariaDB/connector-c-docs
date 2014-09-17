@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sect1 id="chapter.charsets">
+<title>
+  Supported character sets
+ </title>
+ <para>
+  The following table lists the available character sets, corresponding
+  codepages and iconv character sets.
+ </para>
+ <table frame="none">
+  <caption>Supported character sets</caption>
+  <tgroup cols="4" colsep="0" rowsep="0">
+<?dbhtml cellspacing="0" ?>
+<?dbhtml cellpadding="1" ?>
+   <thead>
+    <row>
+     <entry role="ma_table" colsep="0">Character set</entry>
+     <entry role="ma_table" colsep="0">Description</entry>
+     <entry role="ma_table" colsep="0">Max. length</entry>
+     <entry role="ma_table" colsep="0">Windows CP</entry>
+     <entry role="ma_table" colsep="0">Iconv character set</entry>
+    </row>
+   </thead>
+   <tbody>
+    <row>
+     <entry role="ma_table">armscii8</entry>
+     <entry role="ma_table">ARMSCII-8 Armenian</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">ARMSCII-8</entry>
+    </row>
+    <row>
+     <entry role="ma_table">ascii</entry>
+     <entry role="ma_table">US ASCII</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">20127</entry>
+     <entry role="ma_table">ASCII</entry>
+    </row>
+    <row>
+     <entry role="ma_table">big5</entry>
+     <entry role="ma_table">Big5 Traditional Chinese</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">950</entry>
+     <entry role="ma_table">BIG5</entry>
+    </row>
+    <row>
+     <entry role="ma_table">binary</entry>
+     <entry role="ma_table">Binary pseudo charset</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">-</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp1250</entry>
+     <entry role="ma_table">Windows Central European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1250</entry>
+     <entry role="ma_table">CP1250</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp1251</entry>
+     <entry role="ma_table">Windows Cyrillic</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1251</entry>
+     <entry role="ma_table">CP1251</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp1256</entry>
+     <entry role="ma_table">Windows Arabic</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1256</entry>
+     <entry role="ma_table">CP1256</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp1257</entry>
+     <entry role="ma_table">Windows Baltic</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1257</entry>
+     <entry role="ma_table">CP1257</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp850</entry>
+     <entry role="ma_table">DOS West European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">850</entry>
+     <entry role="ma_table">CP850</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp852</entry>
+     <entry role="ma_table">DOS Central European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">852</entry>
+     <entry role="ma_table">CP852</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp866</entry>
+     <entry role="ma_table">DOS Russian</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">866</entry>
+     <entry role="ma_table">CP866</entry>
+    </row>
+    <row>
+     <entry role="ma_table">cp932</entry>
+     <entry role="ma_table">SJIS for Windows Japanese</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">932</entry>
+     <entry role="ma_table">CP932</entry>
+    </row>
+    <row>
+     <entry role="ma_table">dec8</entry>
+     <entry role="ma_table">DEC West European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">DEC</entry>
+    </row>
+    <row>
+     <entry role="ma_table">eucjpms</entry>
+     <entry role="ma_table">UJIS for Windows Japanese</entry>
+     <entry role="ma_table" align="right">3</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">EUCJ-MS</entry>
+    </row>
+    <row>
+     <entry role="ma_table">euckr</entry>
+     <entry role="ma_table">EUC-KR Korean</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">51949</entry>
+     <entry role="ma_table">EUCKR</entry>
+    </row>
+    <row>
+     <entry role="ma_table">gb2312</entry>
+     <entry role="ma_table">GB2312 Simplified Chinese</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">20936</entry>
+     <entry role="ma_table">GB2312</entry>
+    </row>
+    <row>
+     <entry role="ma_table">gbk</entry>
+     <entry role="ma_table">GBK Simplified Chinese</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">936</entry>
+     <entry role="ma_table">GBK</entry>
+    </row>
+    <row>
+     <entry role="ma_table">geostd8</entry>
+     <entry role="ma_table">GEOSTD8 Georgian</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">GEORGIAN-PS</entry>
+    </row>
+    <row>
+     <entry role="ma_table">greek</entry>
+     <entry role="ma_table">ISO 8859-7 Greek</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">28597</entry>
+     <entry role="ma_table">ISO_8859_7</entry>
+    </row>
+    <row>
+     <entry role="ma_table">hebrew</entry>
+     <entry role="ma_table">ISO 8859-8 Hebrew</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">28598</entry>
+     <entry role="ma_table">ISO_8859_8</entry>
+    </row>
+    <row>
+     <entry role="ma_table">hp8</entry>
+     <entry role="ma_table">HP West European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">HP-ROMAN8</entry>
+    </row>
+    <row>
+     <entry role="ma_table">keybcs2</entry>
+     <entry role="ma_table">DOS Kamenicky Czech-Slovak</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">-</entry>
+    </row>
+    <row>
+     <entry role="ma_table">koi8r</entry>
+     <entry role="ma_table">KOI8-R Relcom Russian</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">20866</entry>
+     <entry role="ma_table">KOI8R</entry>
+    </row>
+    <row>
+     <entry role="ma_table">koi8u</entry>
+     <entry role="ma_table">KOI8-U Ukrainian</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">21866</entry>
+     <entry role="ma_table">KOI8U</entry>
+    </row>
+    <row>
+     <entry role="ma_table">latin1</entry>
+     <entry role="ma_table">cp1252 West European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1252</entry>
+     <entry role="ma_table">ISO_8859_1</entry>
+    </row>
+    <row>
+     <entry role="ma_table">latin2</entry>
+     <entry role="ma_table">ISO 8859-2 Central European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1252</entry>
+     <entry role="ma_table">ISO_8859_2</entry>
+    </row>
+    <row>
+     <entry role="ma_table">latin5</entry>
+     <entry role="ma_table">ISO 8859-9 Turkish</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">1254</entry>
+     <entry role="ma_table">ISO_8859_9</entry>
+    </row>
+    <row>
+     <entry role="ma_table">latin7</entry>
+     <entry role="ma_table">ISO 8859-13 Baltic</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">28603</entry>
+     <entry role="ma_table">ISO_8859_13</entry>
+    </row>
+    <row>
+     <entry role="ma_table">macce</entry>
+     <entry role="ma_table">Mac Central European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">10029</entry>
+     <entry role="ma_table">CP1282</entry>
+    </row>
+    <row>
+     <entry role="ma_table">macroman</entry>
+     <entry role="ma_table">Mac West European</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">10000</entry>
+     <entry role="ma_table">MACINTOSH</entry>
+    </row>
+    <row>
+     <entry role="ma_table">sjis</entry>
+     <entry role="ma_table">Shift-JIS Japanese</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">10001</entry>
+     <entry role="ma_table">SJIS</entry>
+    </row>
+    <row>
+     <entry role="ma_table">swe7</entry>
+     <entry role="ma_table">7bit Swedish</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">-</entry>
+    </row>
+    <row>
+     <entry role="ma_table">tis620</entry>
+     <entry role="ma_table">TIS620 Thai</entry>
+     <entry role="ma_table" align="right">1</entry>
+     <entry role="ma_table" align="right">874</entry>
+     <entry role="ma_table">TIS620</entry>
+    </row>
+    <row>
+     <entry role="ma_table">ucs2</entry>
+     <entry role="ma_table">UCS-2 Unicode</entry>
+     <entry role="ma_table" align="right">2</entry>
+     <entry role="ma_table" align="right">-</entry>
+     <entry role="ma_table">UCS2-BE</entry>
+    </row>
+    <row>
+     <entry role="ma_table">ujis</entry>
+     <entry role="ma_table">EUC-JP Japanese</entry>
+     <entry role="ma_table" align="right">3</entry>
+     <entry role="ma_table" align="right">20932</entry>
+     <entry role="ma_table">UJIS</entry>
+    </row>
+    <row>
+     <entry role="ma_table">utf8</entry>
+     <entry role="ma_table">UTF-8 Unicode</entry>
+     <entry role="ma_table" align="right">3</entry>
+     <entry role="ma_table" align="right">65001</entry>
+     <entry role="ma_table">UTF8</entry>
+    </row>
+    <row>
+     <entry role="ma_table">utf8mb4</entry>
+     <entry role="ma_table">UTF-8 Unicode</entry>
+     <entry role="ma_table" align="right">4</entry>
+     <entry role="ma_table" align="right">65001</entry>
+     <entry role="ma_table">UTF8</entry>
+    </row>
+    <row>
+     <entry role="ma_table">utf16</entry>
+     <entry role="ma_table">UTF-16 Unicode</entry>
+     <entry role="ma_table" align="right">4</entry>
+     <entry role="ma_table" align="right">1201</entry>
+     <entry role="ma_table">UTF16</entry>
+    </row>
+    <row>
+     <entry role="ma_table">utf16le</entry>
+     <entry role="ma_table">UTF-16LE Unicode</entry>
+     <entry role="ma_table" align="right">4</entry>
+     <entry role="ma_table" align="right">1200</entry>
+     <entry role="ma_table">UTF16-LE</entry>
+    </row>
+    <row>
+     <entry role="ma_table">utf32</entry>
+     <entry role="ma_table">UTF-32 Unicode</entry>
+     <entry role="ma_table" align="right">4</entry>
+     <entry role="ma_table" align="right">12001</entry>
+     <entry role="ma_table">UTF32</entry>
+    </row>
+   </tbody>
+  </tgroup>
+ </table>
+</sect1>

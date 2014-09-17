@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_row_seek" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_row_seek</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_row_seek</refname>
+    <refpurpose>Positions row cursor</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_ROW_OFFSET</type>
+      <methodname>mysql_row_seek</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>result</parameter>
+      </methodparam>
+      <methodparam>
+        <type>MYSQL_ROW_OFFSET</type>
+        <parameter>offset</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Positions the row cursor to an aribtrary row in a result set which was
+      obtaimed by &function.mysql_store_result;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>result</parameter></term>
+          <listitem><para>&param.result_store;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>offset</parameter></term>
+          <listitem><para>Row offset. This value can be obtained either by &function.mysql_row_seek; or &function.mysql_row_tell;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The previous row offset.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        This function will not work if the result set was obtained by
+        &function.mysql_use_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_store_result;, &function.mysql_row_tell;
+    </para>
+  </refsect1>
+</refentry>

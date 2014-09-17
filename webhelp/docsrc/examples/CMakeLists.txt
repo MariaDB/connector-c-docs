@@ -1,0 +1,39 @@
+FILE(GLOB EXAMPLE_FILES ${CMAKE_CURRENT_DIR} *.c)
+
+# GET MARIADB_CLIENT_DIR
+IF(NOT MARIADB_CLIENT_DIR)
+  MESSAGE(FATAÖ "MariaDB client directory not specified (-DMARIADB_CLIENT_DIR=/path/to/mariadb_client)")
+ENDIF()
+
+EXEC_PROGRAM(${MARIADB_CLIENT_DIR}/bin/mariadb_config ${MARIADB_CLIENT_DIR}/bin
+             ARGS --libs
+             OUTPUT_VARIABLE mariadb_libs
+             RETURN_VARIABLE ret)
+EXEC_PROGRAM(${MARIADB_CLIENT_DIR}/bin/mariadb_config ${MARIADB_CLIENT_DIR}/bin
+             ARGS --include
+             OUTPUT_VARIABLE mariadb_include
+             RETURN_VARIABLE ret)
+
+LIST(APPEND EXCLUDE_FROM_OUTPUT "mysql_debug1")           
+
+SET(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} ${mariadb_include})
+ADD_DEFINITIONS(-DTHREAD)
+
+FOREACH(EXAMPLE_FILE ${EXAMPLE_FILES})
+  GET_FILENAME_COMPONENT(EXAMPLE_FILE ${EXAMPLE_FILE} NAME)
+  STRING(REPLACE ".c" "" EXAMPLE_FILE ${EXAMPLE_FILE})
+  MESSAGE(STATUS "${EXAMPLE_FILE}")
+  ADD_EXECUTABLE(${EXAMPLE_FILE} ${EXAMPLE_FILE}.c)
+  TARGET_LINK_LIBRARIES(${EXAMPLE_FILE} ${mariadb_libs})
+  LIST(FIND EXCLUDE_FROM_OUTPUT ${EXAMPLE_FILE} result)
+  IF(result EQUAL -1)
+    ADD_CUSTOM_COMMAND(OUTPUT ${EXAMPLE_FILE}.out
+                     COMMAND ${EXAMPLE_FILE}
+                     ARGS > ${EXAMPLE_FILE}.out
+                     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/examples
+                     DEPENDS ${EXAMPLE_FILE})
+    SET(example_list ${example_list} ${EXAMPLE_FILE}.out ${EXAMPLE_FILE})
+  ENDIF()
+ENDFOREACH()
+ADD_CUSTOM_TARGET(EXAMPLE_FILE_OUTPUT ALL DEPENDS ${example_list})
+

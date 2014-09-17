@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_library_end" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_library_end</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_server_end</refname>
+    <refpurpose>finalizes the client library.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_library_end</methodname>
+      <methodparam>
+        <type>void</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Finalizes the client library. For a complete description see
+      &function.mysql_server_end;
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.notes;
+    <para>
+      <function>mysql_library_end()</function>
+      is an alias for &function.mysql_server_end; and defined in
+      <filename>mysql.h</filename>
+      :
+    </para>
+    <synopsis language="C">
+      #define mysql_library_end mysql_server_end
+    </synopsis>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_server_end;, &function.mysql_library_init;,
+      &function.mysql_library_end;
+    </para>
+  </refsect1>
+</refentry>

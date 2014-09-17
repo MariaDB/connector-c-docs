@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_dyncol_free" display-name="1">
+  <refmeta>
+    <refentrytitle>mariadb_dyncol_free</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_dyncol_free</refname>
+    <refpurpose>Release memory associated by a dynamic column</refpurpose>
+  </refnamediv>
+  <refsect1></refsect1>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mariadb_dyncol_column_free</methodname>
+      <methodparam>
+        <type>DYNAMIC_COLUMN *</type>
+        <parameter>str</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Release memory associated by a dynamic column, which was previously allocated
+      by &function.mariadb_dyncol_create_many_named; or
+      &function.mariadb_dyncol_create_many_num;
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <parameter>str</parameter>
+          </term>
+          <listitem><para>A pointer to a dynamic column.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 0 or positive value on success, a nagative value on error.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;  
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mariadb_dyncol_create_many_named;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+  </refsect1>
+</refentry>

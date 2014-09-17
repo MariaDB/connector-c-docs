@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_character_set_name" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_character_set_name</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_character_set_name</refname>
+    <refpurpose>returns the name of the current client character set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_character_set_name</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the name of the current client character set for the specified
+      connection.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The default client character set for the specified connection
+    </para>
+  </refsect1>
+  <refsect1 role="note">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          For a list of available character sets see
+          <link linkend="chapter.charsets">supported character sets</link> .
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_character_set_info;, &function.mysql_set_character_set;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+    &examples.mysql_character_set_name;
+    <para>
+      Output:
+    </para>
+    <!-- &examples.mysql_character_set_name.out; -->
+  </refsect1>
+</refentry>

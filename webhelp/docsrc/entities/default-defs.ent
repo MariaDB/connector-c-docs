@@ -1,0 +1,20 @@
+<!--
+  Do not change this automatically generated file!
+-->
+<!ENTITY reftitle.notes "<title>Notes</title>">
+<!ENTITY reftitle.constants "<title>Constants</title>">
+<!ENTITY reftitle.data_structures "<title>Data structure</title>">
+<!ENTITY reftitle.description "<title>Description</title>">
+<!ENTITY reftitle.parameters "<title>Parameters</title>">
+<!ENTITY reftitle.version "<title>Version</title>">
+<!ENTITY reftitle.retval "<title>Return value</title>">
+<!ENTITY reftitle.seealso "<title>See also</title>">
+<!ENTITY reftitle.example "<title>Example</title>">
+<!ENTITY product_name "MariaDB Connector/C">
+<!ENTITY version_1_0 "1.0" >
+<!ENTITY version_1_1 "1.1" >
+<!ENTITY version_2_0 "2.0" >
+<!ENTITY check            "&#x02713;" >
+<!ENTITY param_in "IN">
+<!ENTITY param_out "OUT">
+<!ENTITY param_inout "IN/OUT">

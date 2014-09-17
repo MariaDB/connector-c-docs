@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_close" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_close</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_close</refname>
+    <refpurpose>Closes a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_stmt_close</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Closes a prepared statement. &function.mysql_stmt_close; also deallocates the
+      statement handle. If the current statement has pending or unread results,
+      this function cancels them so that the next query can be executed.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        If you want to reuse the statement handle with a different SQL command, use
+        &function.mysql_stmt_reset;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_init;&function.mysql_stmt_reset;
+    </para>
+  </refsect1>
+</refentry>

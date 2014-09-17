@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_refresh" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_refresh</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_refresh</refname>
+    <refpurpose>flush server information</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_refresh</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned int</type>
+        <parameter>options</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      The &function.mysql_refresh; flushes different types of information stored on
+      server side. The bit-masked parameter
+      <parameter>options</parameter>
+      specifies which kind of information will be flushed.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>options</parameter></term>
+          <listitem><para>A bit masked composed integer</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <table frame="none">
+      <caption>Option flags</caption>
+      <tgroup cols="2">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="1" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Option</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">REFRESH_GRANT</entry>
+            <entry role="ma_table">Refresh grant tables.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_LOG</entry>
+            <entry role="ma_table">Flush logs.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_TABLES</entry>
+            <entry role="ma_table">Flush table cache</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_HOSTS</entry>
+            <entry role="ma_table">Flush host cache</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_STATUS</entry>
+            <entry role="ma_table">Reset status variables</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_THREADS</entry>
+            <entry role="ma_table">Flush thread cache</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_SLAVE</entry>
+            <entry role="ma_table">Reset master server information and restart slaves</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_MASTER</entry>
+            <entry role="ma_table">Remove binary log files</entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_READ_LOCK</entry>
+            <entry role="ma_table"></entry>
+          </row>
+          <row>
+            <entry role="ma_table">REFRESH_FAST</entry>
+            <entry role="ma_table"></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, otherweise non zero.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        To combine different values in the options parameter use the OR operator
+        '|'.
+      </para>
+      <para>
+        The function &function.mysql_reload; is an alias for
+        &function.mysql_refresh;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+  </refsect1>
+</refentry>

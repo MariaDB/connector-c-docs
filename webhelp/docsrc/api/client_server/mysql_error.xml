@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_error" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_error</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_error</refname>
+    <refpurpose>Returns a string description of the last error</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_error</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the last error message for the most recent function call that can
+      succeed or fail.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &refitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem>
+            <para>&param.mysql; </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A string that describes the error. If no error occured an emtry string is
+      returned.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        Client error messages are listed in
+        <filename>errmsg.c</filename> of &product_name; source distribution.
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_errno;, &function.mysql_sqlstate;.
+    </para>
+  </refsect1>
+</refentry>

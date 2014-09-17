@@ -1,0 +1,9 @@
+<!--
+  Autogeerated file - do not change this file manually!
+-->
+&api.charset.mariadb_convert_string;
+&api.charset.mysql_get_character_set_info;
+&api.charset.mysql_get_charset_by_name;
+&api.charset.mysql_get_charset_by_nr;
+&api.charset.mysql_set_character_set;
+

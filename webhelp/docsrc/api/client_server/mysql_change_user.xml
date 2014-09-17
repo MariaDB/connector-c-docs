@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_change_user" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_change_user</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_change_user</refname>
+    <refpurpose>Changes the user of the current database connection</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.descripption;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_change_user</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>user</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>passwd</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>db</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Changes the user and default database of the current connection.
+    </para>
+    <para>
+      In order to successfully change users a valid username and password
+      parameters must be provided and that user must have sufficient permissions to
+      access the desired database. If for any reason authorization fails, the
+      current user authentication will remain
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>user</parameter></term>
+          <listitem><para>The user name for server authentication</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>passwd</parameter></term>
+          <listitem><para>The password for server authentication</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>db</parameter></term>
+          <listitem><para>The default database. If desired, the NULL value may be passed resulting in only changing the user and not selecting a database. To select a database in this case use the &function.mysql_select_db; function.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="note">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          &function.mysql_change_user; will always cause the current database
+          connection to behave as if was a completely new database connection,
+          regardless of if the operation was completed successfully. This reset
+          includes performing a rollback on any active transactions, closing all
+          temporary tables, and unlocking all locked tables.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          If desired, the NULL value may be passed resulting in only changing the user and not selecting a database.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_connect;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+    &examples.mysql_change_user;
+    <para>
+      Output:
+    </para>
+    <!-- &examples.mysql_change_user.out; -->
+  </refsect1>
+</refentry>

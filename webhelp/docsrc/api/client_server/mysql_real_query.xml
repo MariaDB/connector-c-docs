@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_real_query" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_real_query</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_real_query</refname>
+    <refpurpose>performs a query on the database</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_real_query</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>q</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned</type>
+        <parameter>long</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      The &function.mysql_real_query; is the binary safe function for performing a
+      statement on the database server.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>query</parameter></term>
+          <listitem><para>A string containing the statement to be performed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>long</parameter></term>
+          <listitem><para>Length of the string.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, otherwise non zero
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Contrary to &function.mysql_query; function &function.mysql_real_query; is
+        binary safe.
+      </para>
+      <para>
+        To determine if &function.mysql_real_query; returns a result set use the
+        &function.mysql_num_fields; function.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_query;, &function.mysql_num_fields;,
+      &function.mysql_use_result;, &function.mysql_store_result;
+    </para>
+  </refsect1>
+</refentry>

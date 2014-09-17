@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_init" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_init</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_init</refname>
+    <refpurpose>Initializes a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_STMT *</type>
+      <methodname>mysql_stmt_init</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Initializes and allocates memory for a prepared statement.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A pointer to a MYSQL_STMT structure or NULL if an error occured.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        A statement handle which was allocated by &function.mysql_stmt_init; needs
+        to be freed with &function.mysql_stmt_close;.
+      </para>
+      <para>
+        Any subsequent calls to any mysql_stmt function will fail until
+        &function.mysql_stmt_prepare; was called.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_close;, &function.mysql_stmt_prepare;
+    </para>
+  </refsect1>
+</refentry>

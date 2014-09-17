@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_info" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_info</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_info</refname>
+    <refpurpose>retrieves information about the most recently executed query</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_info</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      The &function.mysql_info; function returns a string providing information
+      about the last query executed. The nature of this string is provided below:
+      <table border="0">
+        <title>
+          Possible mysql_info return values
+        </title>
+        <tgroup cols="2" border="0">
+          <thead>
+            <row>
+              <entry align="center">Query type</entry>
+              <entry align="center">Example result string</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>INSERT INTO...SELECT...</entry>
+              <entry>Records: 100 Duplicates: 0 Warnings: 0</entry>
+            </row>
+            <row>
+              <entry>INSERT INTO...VALUES (...),(...),(...)</entry>
+              <entry>Records: 3 Duplicates: 0 Warnings: 0</entry>
+            </row>
+            <row>
+              <entry>LOAD DATA INFILE ...</entry>
+              <entry>Records: 1 Deleted: 0 Skipped: 0 Warnings: 0</entry>
+            </row>
+            <row>
+              <entry>ALTER TABLE ...</entry>
+              <entry>Records: 3 Duplicates: 0 Warnings: 0</entry>
+            </row>
+            <row>
+              <entry>UPDATE ...</entry>
+              <entry>Rows matched: 40 Changed: 40 Warnings: 0</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A character string representing additional information about the most
+      recently executed query
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Queries which do not fall into one of the preceding formats are not
+        supported (e.g.
+        <command>SELECT ..</command>
+        ). In these situations &function.mysql_info; will return an empty string.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_affected_rows;, &function.mysql_warning_count;
+    </para>
+  </refsect1>
+</refentry>

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_read_query_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_read_query_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_read_query_result</refname>
+    <refpurpose>Reads a result set package from server</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_read_query_result</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Waits for a server result set or response package from a previously executed &function.mysql_send_query;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, otherwise non zero
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_send_query;
+    </para>
+  </refsect1>
+</refentry>

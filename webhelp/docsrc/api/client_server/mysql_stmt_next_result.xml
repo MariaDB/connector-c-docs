@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_next_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_next_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_next_result</refname>
+    <refpurpose>Prepares next result set from a stored procedure</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_stmt_next_result</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Prepares next result set from a previous call to
+      &function.mysql_stmt_execute;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        If a multi result set contains errors the return value of
+        &function.mysql_errno; and &function.mysql_error; might change and there
+        will be no result set available
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_next_result;
+    </para>
+  </refsect1>
+</refentry>

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_field_count" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_field_count</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_field_count</refname>
+    <refpurpose>Returns the number of fields in a result set of a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned int</type>
+      <methodname>mysql_stmt_field_count</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the number of fields in a result set of a prepared statement.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      The number of fields in a result set.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The number of fields will be available after calling
+        &function.mysql_stmt_prepare;.
+      </para>
+      <para>
+        &function.mysql_stmt_field_count; returns zero for UPSERT statements which
+        doesn't produce a result set.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_prepare;, &function.mysql_stmt_param_count;
+    </para>
+  </refsect1>
+</refentry>

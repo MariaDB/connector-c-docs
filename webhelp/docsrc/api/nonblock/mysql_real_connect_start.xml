@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_real_connect_start" display-name="1">
+  <refmeta>
+    <refentrytitle>mysql_real_connect_start</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_real_connect_start</refname> 
+    <refpurpose>Establish a connection to database server in non-blocking mode</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_real_connect_start</methodname>
+      <methodparam>
+        <type>MYSQL **</type>
+        <parameter>ret</parameter>
+      </methodparam>
+      <type>MYSQL *</type>
+      <methodname>mysql_real_connect</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>host</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>user</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>passwd</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>db</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned int</type>
+        <parameter>port</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>unix_socket</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned long</type>
+        <parameter>flags</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Initiates a non-blocking connection request to a server.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>ret</parameter></term>
+          <listitem><para>When &function.mysql_real_connect_start; or &function.mysql_real_connect_cont; returns zero, a copy of the passed 'mysql' argument is stored in *ret.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>A mysql handle, which was previously initialized or allocated by &function.mysql_init;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>host</parameter></term>
+          <listitem><para>Can be either a host name or an IP address. Passing the NULL value or the string "localhost" to this parameter, the local host is assumed.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>user</parameter></term>
+          <listitem><para>The user name</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>passwd</parameter></term>
+          <listitem><para>If provided or NULL, the server will attempt to authenticate the user against those user records which have no password only. This allows one username to be used with different permissions (depending on if a password as provided or not).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>db</parameter></term>
+          <listitem><para>If provided will specify the default database to be used when performing queries.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>port</parameter></term>
+          <listitem><para>Specifies the port number to attempt to connect to the server.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>unix_socket</parameter></term>
+          <listitem><para>Specifies the socket or named pipe that should be used.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>flags</parameter></term>
+          <listitem><para>The <parameter>flags</parameter> allows to set various connection options</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &retitle.retval;
+    &return.nonblock;
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 2.0</para>
+  </refsect1>
+  <refsect1>
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        If &function.mysql_real_connect_start; returns zero, then the operation completed without blocking.
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_connect; &function.mysql_real_connect_cont;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    &reftitle.example;
+    &examples.mysql_real_connect_start;
+  </refsect1>
+</refentry>

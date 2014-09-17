@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_reset" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_reset</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_reset</refname>
+    <refpurpose>Resets a prepared statement.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_stmt_reset</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Resets a prepared statement on client and server to state after prepare.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      &return.my_bool;
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        &function.mysql_stmt_reset; resets the statement on the server, unbuffered
+        result sets and errors. Bindings and stored result sets will not be cleared.
+        The latter one will be cleared when reexecuting or closing the prepared
+        statement.
+      </para>
+      <para>
+        To reprepare a prepared statement with another SQL statement use
+        &function.mysql_stmt_prepare;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_close;, &function.mysql_stmt_prepare;,
+      &function.mysql_stmt_execute;
+    </para>
+  </refsect1>
+</refentry>

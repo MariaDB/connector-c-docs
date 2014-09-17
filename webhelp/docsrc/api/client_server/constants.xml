@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision: 323624 $ -->
+<section>
+  &reftitle.constants;
+  <sect1>
+    <title>
+      Types for
+      <structname>MYSQL_TIME</structname>
+    </title>
+    <para>
+      Specifies the type of a
+      <structname>MYSQL_TIME</structname>
+      structure.
+    </para>
+    <para>
+      <table frame="none">
+        <caption>Types for <structname>MYSQL_TIME</structname>
+        </caption>
+        <tgroup cols="3" colsep="0" rowsep="0">
+          <?dbhtml cellspacing="0" ?>
+          <?dbhtml cellpadding="1" ?>
+          <thead>
+            <row>
+              <entry role="ma_table" colsep="0">Constant</entry>
+              <entry role="ma_table" colsep="0">Value</entry>
+              <entry role="ma_table" colsep="0">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row role="ma_table">
+              <entry role="ma_table" colsep="0">MYSQL_TIMESTAMP_NONE</entry>
+              <entry role="ma_table" colsep="0">-2</entry>
+              <entry role="ma_table" colsep="0">NULL value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">MYSQL_TIMESTAMP_ERROR</entry>
+              <entry role="ma_table" colsep="0">-1</entry>
+              <entry role="ma_table" colsep="0">Set if an error occured</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">MYSQL_TIMESTAMP_DATE</entry>
+              <entry role="ma_table" colsep="0">0</entry>
+              <entry role="ma_table" colsep="0">struct <structname>MYSQL_TIME</structname> represents a date</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">MYSQL_TIMESTAMP_DATETIME</entry>
+              <entry role="ma_table" colsep="0">1</entry>
+              <entry role="ma_table" colsep="0">struct <structname>MYSQL_TIME</structname> represents a datetime</entry>
+            </row>
+            <row role="ma_table">
+              <entry role="ma_table" colsep="0">MYSQL_TIMESTAMP_TIME</entry>
+              <entry role="ma_table" colsep="0">2</entry>
+              <entry role="ma_table" colsep="0">struct <structname>MYSQL_TIME</structname> represents a time</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+    <para>
+      MySQL time types are defined in
+      <filename>mysql.h</filename>
+      :
+    </para>
+    <programlisting role="screen">
+      <![CDATA[enum enum_mysql_timestamp_type
+      {
+      MYSQL_TIMESTAMP_NONE= -2,
+      MYSQL_TIMESTAMP_ERROR= -1,
+      MYSQL_TIMESTAMP_DATE= 0,
+      MYSQL_TIMESTAMP_DATETIME= 1,
+      MYSQL_TIMESTAMP_TIME= 2
+      } ]]>
+    </programlisting>
+  </sect1>
+  <sect1>
+    <title>
+      Field flags
+    </title>
+    <para>
+      Field flags are used in
+      <member>flags</member>
+      of structure
+      <structname>MYSQL_FIELD</structname>
+      .
+    </para>
+    <para>
+      <table frame="none" colsep="1" rowsep="1">
+        <title>
+          Field flags
+        </title>
+        <tgroup cols="3">
+          <?dbhtml cellspacing="0" ?>
+          <?dbhtml cellpadding="1" ?>
+          <colspec />
+          <colspec align="right"/>
+          <colspec/>
+          <thead>
+            <row>
+              <entry role="ma_table" align="center">Constant</entry>
+              <entry role="ma_table" align="center">Value</entry>
+              <entry role="ma_table" align="center">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry role="ma_table">NOT_NULL_FLAG</entry>
+              <entry role="ma_table">1</entry>
+              <entry role="ma_table">Field/Column is defined as NOT NULL</entry>
+            </row>
+            <row>
+              <entry role="ma_table">PRI_KEY_FLAG</entry>
+              <entry role="ma_table">2</entry>
+              <entry role="ma_table">Field/Column is part of a primary key</entry>
+            </row>
+            <row>
+              <entry role="ma_table">UNIQUE_KEY_FLAG</entry>
+              <entry role="ma_table">4</entry>
+              <entry role="ma_table">Field/Column is part of a unique key</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MULTIPLE_KEY_FLAG</entry>
+              <entry role="ma_table">8</entry>
+              <entry role="ma_table">Field/Column is part of a non unique or primary key</entry>
+            </row>
+            <row>
+              <entry role="ma_table">BLOB_FLAG</entry>
+              <entry role="ma_table">16</entry>
+              <entry role="ma_table">Field/Column is a BLOB</entry>
+            </row>
+            <row>
+              <entry role="ma_table">UNSIGNED_FLAG</entry>
+              <entry role="ma_table">32</entry>
+              <entry role="ma_table">Field/Column is defined as NOT NULL</entry>
+            </row>
+            <row>
+              <entry role="ma_table">ZEROFILL_FLAG</entry>
+              <entry role="ma_table">64</entry>
+              <entry role="ma_table">Field/Column is defined with zerofill option</entry>
+            </row>
+            <row>
+              <entry role="ma_table">BINARY_FLAG</entry>
+              <entry role="ma_table">128</entry>
+              <entry role="ma_table">Field/Column is binary</entry>
+            </row>
+            <row>
+              <entry role="ma_table">ENUM_FLAG</entry>
+              <entry role="ma_table">256</entry>
+              <entry role="ma_table">Field/Column has enum type</entry>
+            </row>
+            <row>
+              <entry role="ma_table">AUTO_INCREMENZT_FLAG</entry>
+              <entry role="ma_table">512</entry>
+              <entry role="ma_table">Field/Column is defined as auto increment</entry>
+            </row>
+            <row>
+              <entry role="ma_table">TIMESTAMP_FLAG</entry>
+              <entry role="ma_table">1024</entry>
+              <entry role="ma_table">Field/Column is defined as timestamp</entry>
+            </row>
+            <row>
+              <entry role="ma_table">SET_FLAG</entry>
+              <entry role="ma_table">2048</entry>
+              <entry role="ma_table">Field/Column is a set</entry>
+            </row>
+            <row>
+              <entry role="ma_table">NO_DEFAULT_VALUE_FLAG</entry>
+              <entry role="ma_table">4096</entry>
+              <entry role="ma_table">Field/Column has no default value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">ON_UPDATE_NOW_FLAG</entry>
+              <entry role="ma_table">8192</entry>
+              <entry role="ma_table">On update Field/Column will be set to current time</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+    <para>
+      Field flags are defined in
+      <filename>mysql_com.h</filename>
+    </para>
+  </sect1>
+  <sect1>
+    <title>
+      Field types
+    </title>
+    <para>
+      Field types are used in member
+      <member>type</member>
+      of
+      <structname>MYSQL_FIELD</structname>
+      structure and in
+      <member>buffer_type</member>
+      of
+      <structname>MYSQL_BIND</structname>
+      structure. They indicate the type of the column or the type of the bound
+      variable.
+    </para>
+    <para>
+      <table frame="none" colsep="1" rowsep="1">
+        <title>
+          Field flags
+        </title>
+        <tgroup cols="4">
+          <?dbhtml cellspacing="0" ?>
+          <?dbhtml cellpadding="1" ?>
+          <colspec colname="col1"/>
+          <colspec colname="col2"/>
+          <colspec colname="col3"/>
+          <colspec colname="col4"/>
+          <spanspec spanname="head1" namest="col2" nameend="col3"/>
+          <thead>
+            <row>
+              <entry role="ma_table" morerows="1" valign="middle" align="center">Constant</entry>
+              <entry role="ma_table" spanname="head1" align="center">Corresponding C type</entry>
+              <entry role="ma_table" morerows="1" valign="middle" align="center">Description</entry>
+            </row>
+            <row>
+              <entry role="ma_table">non binary</entry>
+              <entry role="ma_table">binary</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_DECIMAL</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">unsupported</entry>
+              <entry role="ma_table">Decimal type</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_TINY</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char</entry>
+              <entry role="ma_table">tiny int (1 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_SHORT</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">short</entry>
+              <entry role="ma_table">Short (2 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_YEAR</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">short</entry>
+              <entry role="ma_table">Short (2 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_INT24</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">int</entry>
+              <entry role="ma_table">Integer (3 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_LONG</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">int</entry>
+              <entry role="ma_table">Integer (4 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_LONGLONG</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">longlong)</entry>
+              <entry role="ma_table">Long value (8 byte)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_FLOAT</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">float</entry>
+              <entry role="ma_table">floating point value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_DOUBLE</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">double</entry>
+              <entry role="ma_table">double precision value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_TIMESTAMP</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">
+                <structname>MYSQL_TIME</structname>
+              </entry>
+              <entry role="ma_table">timestamp value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_TIME</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">
+                <structname>MYSQL_TIME</structname>
+              </entry>
+              <entry role="ma_table">time value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_DATE</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">
+                <structname>MYSQL_TIME</structname>
+              </entry>
+              <entry role="ma_table">date value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_NEWDATE</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">
+                <structname>MYSQL_TIME</structname>
+              </entry>
+              <entry role="ma_table">date value</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_ENUM</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">enum value (max. 65535 values)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_SET</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">set values (max. 64 members)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_STRING</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">fixed length string (max. 255 chars)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_VAR_STRING</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">variable length string (max. 255 chars)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TINY_BLOB</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">blob or text value (max. 255 bytes)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_BLOB</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">blob or text value (max. 65536 bytes)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_MEDIUM_BLOB</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">blob or text value (max. 16777216 bytes)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_LONG_BLOB</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">blob or text value (max. 4294967296 bytes)</entry>
+            </row>
+            <row>
+              <entry role="ma_table">MYSQL_TYPE_GEOMETRY</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">char *</entry>
+              <entry role="ma_table">binary geometric object(s)</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+    <para>
+      Field types are defined in include file
+      <filename>mysql_com.h</filename>
+    </para>
+    <para>
+      <programlisting>
+        <![CDATA[enum enum_field_types { MYSQL_TYPE_DECIMAL, MYSQL_TYPE_TINY,
+        MYSQL_TYPE_SHORT,  MYSQL_TYPE_LONG,
+        MYSQL_TYPE_FLOAT,  MYSQL_TYPE_DOUBLE,
+        MYSQL_TYPE_NULL,   MYSQL_TYPE_TIMESTAMP,
+        MYSQL_TYPE_LONGLONG,MYSQL_TYPE_INT24,
+        MYSQL_TYPE_DATE,   MYSQL_TYPE_TIME,
+        MYSQL_TYPE_DATETIME, MYSQL_TYPE_YEAR,
+        MYSQL_TYPE_NEWDATE, MYSQL_TYPE_VARCHAR,
+        MYSQL_TYPE_BIT,
+        MYSQL_TYPE_NEWDECIMAL=246,
+        MYSQL_TYPE_ENUM=247,
+        MYSQL_TYPE_SET=248,
+        MYSQL_TYPE_TINY_BLOB=249,
+        MYSQL_TYPE_MEDIUM_BLOB=250,
+        MYSQL_TYPE_LONG_BLOB=251,
+        MYSQL_TYPE_BLOB=252,
+        MYSQL_TYPE_VAR_STRING=253,
+        MYSQL_TYPE_STRING=254,
+        MYSQL_TYPE_GEOMETRY=255,
+        MAX_NO_FIELD_TYPES };]]>
+      </programlisting>
+    </para>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      TEXT columns always have a BLOB field type. To determine the correct type you need to check the character set
+      number of the <structname>MYSQL_FIELD</structname> structure.
+    </itemizedlist>
+  </sect1>
+  <sect1>
+    <title>
+      Dynamic column value types
+    </title>
+    <para>
+      Every dynamic column value has a type, which is determined by the member type
+      of the
+      <structname>DYNAMIC_COLUMN_VALUE</structname>
+      structure.
+    </para>
+    <para>
+      Dynamic column value types are defined in include file
+      <filename>ma_dyncol.h</filename>
+      .
+    </para>
+    <para>
+      <table frame="none">
+        <caption>Types for <structname>DYNAMIC_COLUMN_VALUES</structname>
+        </caption>
+        <tgroup cols="2" colsep="0" rowsep="0">
+          <?dbhtml cellspacing="0" ?>
+          <?dbhtml cellpadding="1" ?>
+          <thead>
+            <row>
+              <entry role="ma_table" colsep="0">Constant</entry>
+              <entry role="ma_table" colsep="0">
+                <structname>DYNAMIC_COLUMN_VALUE</structname> member</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row role="ma_table">
+              <entry role="ma_table" colsep="0">DYN_COL_NULL</entry>
+              <entry role="ma_table" colsep="0">-</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_INT</entry>
+              <entry role="ma_table" colsep="0">x.long_value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_UINT</entry>
+              <entry role="ma_table" colsep="0">x.ulong_value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_DOUBLE</entry>
+              <entry role="ma_table" colsep="0">x.double</entry>
+            </row>
+            <row role="ma_table">
+              <entry role="ma_table" colsep="0">DYN_COL_STRING</entry>
+              <entry role="ma_table" colsep="0">x.string.value and x.string.charset</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_DATETIME</entry>
+              <entry role="ma_table" colsep="0">x.time_value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_DATE</entry>
+              <entry role="ma_table" colsep="0">x.time_value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_TIME</entry>
+              <entry role="ma_table" colsep="0">x.time_value</entry>
+            </row>
+            <row>
+              <entry role="ma_table" colsep="0">DYN_COL_DYNCOL</entry>
+              <entry role="ma_table" colsep="0">x.string.value</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </para>
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+      <para>
+        Values with type DYN_COL_NULL do not ever occur in dynamic columns blobs.
+      </para>
+      <para>
+        Type DYN_COL_DYNCOL means that the value is anther dynamic column. This is
+        how nested dynamic columns are done.
+      </para>
+      <para>
+        Opposed to the server implementation the MariaDB client library doesn't
+        support decimal type in dynamic columns.
+      </para>
+    </itemizedlist>
+  </sect1>
+</section>

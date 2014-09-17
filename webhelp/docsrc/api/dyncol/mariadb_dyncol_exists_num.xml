@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_dyncol_exists_num" display-name="1">
+  <refmeta>
+    <refentrytitle>mariadb_dyncol_exists_num</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_dyncol_exists_num</refname>
+    <refpurpose>Checks if a column for a given key exists</refpurpose>
+  </refnamediv>
+  <refsect1></refsect1>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>enum enum_dyncol_func_result</type>
+      <methodname>mariadb_dyncol_exists_num</methodname>
+      <methodparam>
+        <type>DYNAMIC_COLUMN *</type>
+        <parameter>str</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint</type>
+        <parameter>column_key</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Checks if a column for a given key exists
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <parameter>str</parameter>
+          </term>
+          <listitem><para>A pointer to a dynamic column.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_key</parameter>
+          </term>
+          <listitem><para>Numeric column key</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns
+      <type>DYN_COL_YES</type>
+      if a column for given key exists, otherwise
+      <type>DYN_COL_NO</type>
+      .
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue"></refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mariadb_dyncol_exists_named;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+    <!--
+    <xi:include href="&example_path;/mysql_affected_rows.c" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    The above example will output:
+    <programlisting><xi:include href="&example_path;/mysql_affected_rows.out" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/></programlisting> -->
+  </refsect1>
+</refentry>

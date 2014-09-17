@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_timeout_value_ms" display-name="1">
+  <refmeta>
+    <refentrytitle>mysql_get_timeout_value_ms</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_timeout_value_ms</refname> 
+    <refpurpose>Returns the value for read time out in milliseconds.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned int</type>
+      <methodname>mysql_get_timeout_value_ms</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the value for read time out in milliseconds.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &retitle.retval;
+    <para>
+      Returns the read time out value in milliseconds.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 2.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          This should only be called when a <function>_start()</function> or <function>_cont()</function> function returns a value with the <constant>MYSQL_WAIT_TIMEOUT</constant> flag set. In this case, it returns the value, in seconds, after which a timeout has occured and the application should call the appropriate <function>_cont()</function> function passing <constant>MYSQL_WAIT_TIMEOUT</constant> as the event that occured.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The difference to &function.mysql_get_timeout_value; is that this provides millisecond resolution for timeouts, rather than just whole seconds. In MariaDB 10.0, internal timeouts can now be in milliseconds, while in 5.5 and below it was only whole seconds.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_get_socket; &function.mysql_get_timeout_value;
+    </para>
+  </refsect1>
+</refentry>

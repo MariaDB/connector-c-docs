@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<informaltable frame="none">
+  <tgroup cols="2" colsep="0" rowsep="0">
+    <thead>
+      <row>
+        <entry role="ma_table" colsep="0">Rev.</entry>
+        <entry role="ma_table" colsep="0">Date/Description</entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>
+          <emphasis role="strong">118</emphasis>
+        </entry>
+        <entry>Mon 2014-02-10 09:04:01 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-77: Backslash escaped quotes (', "") are not parsed correctly</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">117</emphasis>
+        </entry>
+        <entry>Fri 2014-02-07 11:31:30 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-75: options not handled correctly after a reconnect occured</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">116</emphasis>
+        </entry>
+        <entry>Thu 2014-02-06 12:49:39 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-74: Local infile handler crashes due to missing initialization of handler functions.</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">115</emphasis>
+        </entry>
+        <entry>Tue 2014-02-04 20:20:33 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed path for symbolic links on non Windows platforms when MySQL compatibility mode was set:
+All libraries including symlinks are now in ${CMAKE_INSTALL_PREFIX}/lib/mariadb</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">114</emphasis>
+        </entry>
+        <entry>Tue 2014-02-04 20:09:23 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-71: mysql_real_query crashes after server restart
+- We now check socket status before net_flush (and return error if the socket is dead)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">113</emphasis>
+        </entry>
+        <entry>Mon 2014-01-27 21:14:02 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-70: Unknown error when reading large packets via conpressed protocol</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">112</emphasis>
+        </entry>
+        <entry>Sat 2014-01-25 18:16:36 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-67: mysql_stmt_fetch returns error instead of MYSQL_NO_DATA when using cursors</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">111</emphasis>
+        </entry>
+        <entry>Fri 2014-01-24 09:02:03 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-68: SELECT fails with "Got packet bigger than 'max_allowed_packet'" on a table with longblob column with fields greater than 15MB</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">110</emphasis>
+        </entry>
+        <entry>Wed 2014-01-22 22:31:08 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-66: Support for quoted values in configuration file</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">109</emphasis>
+        </entry>
+        <entry>Sat 2014-01-11 20:09:32 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added mingw support (Win32). Special thanks to Eric Trinh for his patch!</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">108</emphasis>
+        </entry>
+        <entry>Fri 2014-01-03 01:19:44 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-65:
+  Apples libiconv doesn't provide libiconv_open so we need to link against
+  the macports library instead</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">107</emphasis>
+        </entry>
+        <entry>Wed 2013-11-20 20:37:30 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-60: crash when STMT_ATTR_UPDATE_MAX_LENGTH attribute was set and new date formats are used.
+                 Special thanks to Lionel Elie Mamane and Daniel Bart for their tremendous help.</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">106</emphasis>
+        </entry>
+        <entry>Sun 2013-11-10 19:54:00 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added windows code page to CHARSET_INFO structure</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">105</emphasis>
+        </entry>
+        <entry>Sun 2013-10-27 19:38:11 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed bug in prepared statements: wrong length for MYSQL_TYPE{TIME,DATETIME,TIMESTAMP}
+renewed test certificates for ssl tests</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">104</emphasis>
+        </entry>
+        <entry>Sat 2013-10-26 18:55:24 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Minor prepared statement fixes for time/date/datetime/timestamp types
+Added flag MADB_BIND_DUMMY which allows binding empty buffers</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">103</emphasis>
+        </entry>
+        <entry>Sun 2013-10-20 09:14:48 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-58:
+  support OpenSSL version &lt; 1.0.1</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">102</emphasis>
+        </entry>
+        <entry>Sun 2013-10-20 09:08:05 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed my_error:
+  my_error used wrong offset (ignore EE_FIRSTERROR)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">101</emphasis>
+        </entry>
+        <entry>Mon 2013-10-14 14:17:54 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixes for DBD:mysql (CONC-57)
+added missing functions mysql_read_query_result and mysql_get_parameters</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">100</emphasis>
+        </entry>
+        <entry>Thu 2013-10-10 15:14:15 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixes for Win64 build</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">99</emphasis>
+        </entry>
+        <entry>Sat 2013-10-05 08:30:54 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed window compile error (removed uint from mysql.h)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">98</emphasis>
+        </entry>
+        <entry>Fri 2013-10-04 20:55:23 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-56:
+  provide MAX constants used by PHP's pdo extension</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">97</emphasis>
+        </entry>
+        <entry>Fri 2013-10-04 19:09:08 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Windows build fixes
+ - use /MT flag instead of /MD
+ - add debug libraries to package</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">96</emphasis>
+        </entry>
+        <entry>Tue 2013-10-01 09:53:41 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Removed all internal dependencies from ma_dyncol.
+Fixed compiler warnings</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">95</emphasis>
+        </entry>
+        <entry>Mon 2013-09-30 12:23:13 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed warnings (Thanks to Evan Miller)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">94</emphasis>
+        </entry>
+        <entry>Mon 2013-09-30 06:25:27 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed missing exported symbols</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">93</emphasis>
+        </entry>
+        <entry>Sat 2013-09-28 10:38:56 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added support for connection attributes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">92</emphasis>
+        </entry>
+        <entry>Thu 2013-09-26 14:35:14 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added support for SSL related parameters in mysql_option function</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">91</emphasis>
+        </entry>
+        <entry>Thu 2013-09-26 08:40:20 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-53: Fix C++ compiler errors</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">90</emphasis>
+        </entry>
+        <entry>Fri 2013-09-20 16:21:53 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Minor fixes in ssl test</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">89</emphasis>
+        </entry>
+        <entry>Fri 2013-09-20 15:23:20 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed windows compile error in dynamic columns</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">88</emphasis>
+        </entry>
+        <entry>Fri 2013-09-20 14:48:20 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Merge from 10.0 dynamic column implemenetation:
+        - functions which operate with numeric keys now have suffix _num
+        - Fixes for MDEV 4993-4995</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">87</emphasis>
+        </entry>
+        <entry>Thu 2013-09-19 15:14:11 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">More SSL fixes:
+        - verification functions for key and cert now use SSL_context
+        - Added support for server cert verification (hostname must match)
+        - minor bug fixes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">86</emphasis>
+        </entry>
+        <entry>Tue 2013-09-17 18:47:07 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added support for ssl server certification:
+  mysql_options: Added support MYSQL_OPT_SSL_VALIDATE_SERVER_CERT flag
+  added my_ssl_verify_server_cert which extracts the hostname and compares
+  it with mysql-&gt;host</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">85</emphasis>
+        </entry>
+        <entry>Mon 2013-09-16 16:19:16 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-50:
+mysql_real_connect doesn't return an error if a an invalid ca file was specified.</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">84</emphasis>
+        </entry>
+        <entry>Wed 2013-09-04 18:45:54 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-49:
+  local_infile_init didn't open files with binary flag</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">83</emphasis>
+        </entry>
+        <entry>Mon 2013-09-02 15:31:12 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Windows fixes for dynamic columns</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">82</emphasis>
+        </entry>
+        <entry>Sat 2013-08-31 07:37:01 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-48: Allocate one more byte for trailing zero to prevent crash if the total lengths of compressed
+packages is equal to the value of net buffer size</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">81</emphasis>
+        </entry>
+        <entry>Fri 2013-08-23 18:35:07 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added dyamic column api
+Added character set conversion</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">80</emphasis>
+        </entry>
+        <entry>Tue 2013-08-20 16:40:03 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-44: LOAD DATA INFILE can't open utf16le encoded filenames</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">79</emphasis>
+        </entry>
+        <entry>Wed 2013-08-14 16:08:21 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-46:
+  cleanup of my_win_init(), removed setlocale and server specific stuff</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">78</emphasis>
+        </entry>
+        <entry>Wed 2013-08-14 06:12:23 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">removed safe_malloc implementation</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">77</emphasis>
+        </entry>
+        <entry>Sat 2013-08-03 18:39:05 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-42: More informative errormessages for handshake errors</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">76</emphasis>
+        </entry>
+        <entry>Fri 2013-08-02 17:58:57 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for #conc-41: Connect errormessage doesn't return socket error</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">75</emphasis>
+        </entry>
+        <entry>Thu 2013-08-01 15:23:48 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed LOAD DATA LOCAL INFILE crash when specifying a file which doesn't exist
+Fixed error message for non existing file (was errno=0)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">74</emphasis>
+        </entry>
+        <entry>Thu 2013-08-01 09:56:36 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed crash/undefined behaviour when running large amount of threads:
+  replaced select() with poll()
+Added conneciton timeout support for windows platforms</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">73</emphasis>
+        </entry>
+        <entry>Wed 2013-07-24 07:01:48 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Several test fixes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">72</emphasis>
+        </entry>
+        <entry>Mon 2013-07-22 07:22:04 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixes for Solaris build (Bugs CONC-36,37 and 38)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">71</emphasis>
+        </entry>
+        <entry>Mon 2013-07-15 10:47:05 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">DBUG update and fixes
+Fixed net_read crash in debug version</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">70</emphasis>
+        </entry>
+        <entry>Wed 2013-07-03 07:37:10 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">- More OS/X fixes
+- Fixed wrong error message in mysql_real_connect</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">69</emphasis>
+        </entry>
+        <entry>Mon 2013-07-01 05:27:17 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed compiler warnings</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">68</emphasis>
+        </entry>
+        <entry>Mon 2013-07-01 05:00:34 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Reworked compressed and protocol implementation,
+  including fixes for conc-31 and conc-34
+- Added win64 fixes in protocol (changed ulong to size_t)
+
+modified:
+  include/my_sys.h
+  include/mysql_com.h
+  include/violite.h
+  libmariadb/libmariadb.c
+  libmariadb/my_compress.c
+  libmariadb/my_stmt.c
+  libmariadb/my_thr_init.c
+  libmariadb/net.c
+  libmariadb/violite.c
+  unittest/libmariadb/basic-t.c
+  unittest/libmariadb/charset.c
+  unittest/libmariadb/thread.c
+unknown:
+  xx
+  libmariadb/libmariadb.so.1
+  mariadb_config/mariadb_config
+  mariadb_config/mariadb_config.c
+  unittest/libmariadb/basic-t
+  unittest/libmariadb/charset
+  unittest/libmariadb/connection
+  unittest/libmariadb/cursor
+  unittest/libmariadb/errors
+  unittest/libmariadb/fetch
+  unittest/libmariadb/logs
+  unittest/libmariadb/misc
+  unittest/libmariadb/ps
+  unittest/libmariadb/ps_bugs
+  unittest/libmariadb/ps_new
+  unittest/libmariadb/result
+  unittest/libmariadb/sp
+  unittest/libmariadb/sqlite3
+  unittest/libmariadb/ssl
+  unittest/libmariadb/thread
+  unittest/libmariadb/view</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">67</emphasis>
+        </entry>
+        <entry>Mon 2013-06-17 06:58:20 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-27:
+  Prevent crash if mysql_thread_end was called without prior initialization via mysql_thread_init</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">66</emphasis>
+        </entry>
+        <entry>Thu 2013-06-13 11:38:37 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for OSX build: rename sigset to my_sigset</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">65</emphasis>
+        </entry>
+        <entry>Wed 2013-06-12 15:58:37 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-30: Compilation issue on CentOS 3.9</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">64</emphasis>
+        </entry>
+        <entry>Mon 2013-06-03 08:27:12 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed reconnect problem
+Added workaround for MDEV-4604 in mysql_stmt_store_result</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">63</emphasis>
+        </entry>
+        <entry>Sat 2013-06-01 13:50:35 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added workaround for MDEV-6304: In mysql_stmt_more_results we check for both SERVER_MORE_RESULTS_EXIST
+      and for SERVER_PS_OUT_PARAMS</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">62</emphasis>
+        </entry>
+        <entry>Wed 2013-05-29 11:59:01 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed crash when calling mysql_close_options twice (pointer weren't adjusted to NULL)
+Fixed wrong behaviour when using stored procedures inside prepared statements
+Fixed identiation in my_stmt.h</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">61</emphasis>
+        </entry>
+        <entry>Mon 2013-05-20 18:00:08 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">- Fixed memory overrun in mysql_stmt_execute due to wrong length calculation.
+- Fixed bug in mysql_stmt_next_result
+- Fixed mysql_stmt_reset: multi result sets weren't flushed properly
+- Fixed several test cases</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">60</emphasis>
+        </entry>
+        <entry>Mon 2013-05-20 10:50:58 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for prepared statment multi results:
+  Reallocate buffers (fields and binds) for new resultsets</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">59</emphasis>
+        </entry>
+        <entry>Fri 2013-05-10 10:27:42 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">CONC-26: CLIENT_REMEMBER_OPTIONS is not supported</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">58</emphasis>
+        </entry>
+        <entry>Thu 2013-05-09 14:11:33 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed CONC-9: removed winsock2 from mysql.h
+Fixed CONC-24: reconnect failed
+  mysql_reconnect didn't set reconnect flag for new connection</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">57</emphasis>
+        </entry>
+        <entry>Thu 2013-05-09 12:05:38 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed bug in mysql_stmt_data_seek: Reset the status of stmt to user fetching, otherwise stmt_data_seek will not work after fetch returned MYSQL_NO_DATA.
+Removed examples from build. This directory should be moved into doc tree</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">56</emphasis>
+        </entry>
+        <entry>Tue 2013-04-30 18:02:53 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added microseconds support for prepared statements:
+  datetime, timestamp and time to string conversion now returns microsenconds</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">55</emphasis>
+        </entry>
+        <entry>Thu 2013-04-25 18:24:21 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-21:
+  Ignore the 5.5.5- prefix for MariaDB 10 and report correct version numbers</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">54</emphasis>
+        </entry>
+        <entry>Thu 2013-04-25 08:14:23 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-14: Monitor the socket status in net_clear:
+  In case of a disconnection send_query will try to reconnect</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">53</emphasis>
+        </entry>
+        <entry>Wed 2013-04-24 17:02:03 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for unbuffered stmt fetch: increase number of rows
+Added Test for CONC-24</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">52</emphasis>
+        </entry>
+        <entry>Fri 2013-04-12 11:24:42 +0200</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed memory overrun (wrong length calculation in mysql_stmt_generate_request)
+Fuxed crash with mysql_send_long_data</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">51</emphasis>
+        </entry>
+        <entry>Fri 2013-03-29 18:29:35 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added missing -lm for mariadb_config</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">50</emphasis>
+        </entry>
+        <entry>Tue 2013-03-26 11:31:54 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed crash when running out of memory in mysql_stmt_init.</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">49</emphasis>
+        </entry>
+        <entry>Sun 2013-03-24 18:04:45 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Changed default built options</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">48</emphasis>
+        </entry>
+        <entry>Sun 2013-03-24 15:14:06 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for bug #CONC-16: ource tarball without version info in filename</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">47</emphasis>
+        </entry>
+        <entry>Sun 2013-03-24 14:29:24 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Test case fixes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">46</emphasis>
+        </entry>
+        <entry>Wed 2013-03-20 11:00:46 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added MSI Installer for Windows</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">45</emphasis>
+        </entry>
+        <entry>Tue 2013-03-19 14:53:56 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Disable DBUG for Release builds</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">44</emphasis>
+        </entry>
+        <entry>Tue 2013-03-19 13:31:29 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed build (CMAKE_BINARY_DIR for symbolic links)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">43</emphasis>
+        </entry>
+        <entry>Tue 2013-03-19 13:24:39 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed wrong symlink (Thanks to Axel Schwenke)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">42</emphasis>
+        </entry>
+        <entry>Sun 2013-03-17 12:32:08 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-15
+  Removed redundant prototypes
+  Fixed several prototypes with void parameters</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">41</emphasis>
+        </entry>
+        <entry>Sun 2013-03-17 11:46:50 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONNC-18
+declare local_thr_alaram as static</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">40</emphasis>
+        </entry>
+        <entry>Wed 2013-03-13 21:43:39 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">more test fixes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">39</emphasis>
+        </entry>
+        <entry>Wed 2013-03-13 11:00:56 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed bug in character set autodetection
+Fixed compiler warnings in test suite
+Skipped change_users tests: They don't work anymore (mysql_change_user) security fix
+Applied patch from John Schember</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">38</emphasis>
+        </entry>
+        <entry>Sat 2013-03-09 09:49:04 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Replaced byte declarations (now unsigned char)
+Added initial support for character set autodetection</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">37</emphasis>
+        </entry>
+        <entry>Thu 2013-03-07 13:56:14 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix dbug crash in mysql_server_end</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">36</emphasis>
+        </entry>
+        <entry>Tue 2013-02-26 11:52:22 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Export of mysql_ps_fetch_functions: This will allow clients to convert values
+after fetch (e.g. SQLGetData)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">35</emphasis>
+        </entry>
+        <entry>Wed 2013-02-13 18:35:25 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Prevent freeing of options if connect failed.</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">34</emphasis>
+        </entry>
+        <entry>Wed 2013-01-30 17:44:35 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Updated documentation</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">33</emphasis>
+        </entry>
+        <entry>Wed 2013-01-30 08:42:05 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added missing test for embedded</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">32</emphasis>
+        </entry>
+        <entry>Wed 2013-01-30 08:37:24 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added support for embedded (sqlite)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">31</emphasis>
+        </entry>
+        <entry>Wed 2013-01-23 07:25:26 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added support for options in options-&gt;extension</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">30</emphasis>
+        </entry>
+        <entry>Mon 2013-01-21 13:52:53 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for conc-7:
+- added missing server error codes for MariaDB and MySQL Server
+- added symbolic links for projects which don't support mariadb_config</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">29</emphasis>
+        </entry>
+        <entry>Sun 2013-01-20 14:08:36 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for connc-6: added missing functions
+- mysql_library_init,end as an alias for mysql_server_init/end
+- mysql_get_server and mariadb_connection to determine type of server
+  (mysql or mariadb)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">28</emphasis>
+        </entry>
+        <entry>Thu 2012-12-27 12:02:09 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed license headers which didn't mention PHP code</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">27</emphasis>
+        </entry>
+        <entry>Wed 2012-12-26 23:14:09 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Don't max out on windows warning settings, it is not practical - there are thousands of insignificant warnings</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">26</emphasis>
+        </entry>
+        <entry>Wed 2012-12-26 22:20:50 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">CONC-4 : link with static C runtime when using MSVC</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">25</emphasis>
+        </entry>
+        <entry>Wed 2012-12-26 20:57:26 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for bug conc-5: 
+field-&gt;catalog is undefined if result set was obtained from mysql_stmt_result_metadata()</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">24</emphasis>
+        </entry>
+        <entry>Mon 2012-12-17 19:05:09 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-3:
+  In older CMake versions FindOpenSSL.cmake doesn't work as expected,
+  (OPENSSL_LIBRARIES doesn't contain crypto library), so we set the
+  required cmake version number to 2.8.0 and above</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">23</emphasis>
+        </entry>
+        <entry>Sun 2012-12-16 12:05:40 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">some clean up</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">22</emphasis>
+        </entry>
+        <entry>Sat 2012-12-15 13:49:47 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added IPV6 support</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">21</emphasis>
+        </entry>
+        <entry>Sat 2012-12-15 08:23:43 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for CONC-1 (Inverted error messages no 2058,2059)
+Added support for old password authentication:
+- Fixed scramble_323:
+    use exact length of message (SCRAMBLE_LENGTH_323 instead
+    of strlen(message))
+- Added old_password_authentication plugin into list of builtin plugins</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">20</emphasis>
+        </entry>
+        <entry>Tue 2012-12-11 20:29:50 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">removed mysql_io.c (php streams), which is no longer used</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">19</emphasis>
+        </entry>
+        <entry>Sat 2012-12-01 14:02:34 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixes for SSL
+  - fix for php bug 51647
+  - added cert store
+  - added certificates for testing</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">18</emphasis>
+        </entry>
+        <entry>Fri 2012-11-30 13:47:24 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix for mariadb_config: lib output was not correct
+cleanup
+fixed ps_test (warning_count differs on MariaDB servers)</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">17</emphasis>
+        </entry>
+        <entry>Thu 2012-11-29 17:27:56 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">- Fix for mysql_stmt_next_result:
+  obtain number of fields from mysql structure
+  added test case (ps_new.c)
+- Added additional parameter cipher for mysql_ssl_set
+- some cosmetics for test cases</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">16</emphasis>
+        </entry>
+        <entry>Thu 2012-11-29 11:25:44 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">merge georg's fixes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">15</emphasis>
+        </entry>
+        <entry>Thu 2012-11-29 01:58:44 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">fix typo in shared library versioning</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">14</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 22:44:42 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">set include directory correctly</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">13</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 23:13:00 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">re-branding</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">12</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 14:09:17 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">fix typo</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">11</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 12:30:33 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">more fixes, do not compile zlib library if system one is not found. Instead, add zlib source files to the libmysql_sources</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">10</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 03:00:18 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">More CMake fixes, use system zlib when possible</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">9</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 02:43:39 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">as-needed is not recognized on mint</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">8</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 03:29:05 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Further CMake fixes
+ensure no unresolved symbols in shared library</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">7</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 01:04:21 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix export symbols from shared library on Windows, again</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">6</emphasis>
+        </entry>
+        <entry>Wed 2012-11-28 00:53:08 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fix  build if openssl is not found
+various cosmetic bugs in cmake</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">5</emphasis>
+        </entry>
+        <entry>Tue 2012-11-27 09:57:10 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Fixed crash when trying to call mysql_close twice
+Fixed mysql_config
+Header changes</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">4</emphasis>
+        </entry>
+        <entry>Mon 2012-11-26 11:23:56 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">- Added documentation (docbook based)
+- To build the documentation use cmake . -DBUILD_DOCS=yes
+- minor fixes in tests</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">3</emphasis>
+        </entry>
+        <entry>Mon 2012-11-26 08:32:41 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Added openssl layer support
+Imported libmysql unittests
+Added simple ssl tests
+minor cleanup</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">2</emphasis>
+        </entry>
+        <entry>Wed 2012-11-14 18:43:45 +0100</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">First implementation based on libmysql 3.23.58 and php's mysqlnd extension</entry>
+      </row>
+      <row>
+        <entry>
+          <emphasis role="strong">1</emphasis>
+        </entry>
+        <entry>Mon 2011-10-10 14:01:17 +0300</entry>
+      </row>
+      <row>
+        <entry role="ma_table"/>
+        <entry role="ma_table">Initial import</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>

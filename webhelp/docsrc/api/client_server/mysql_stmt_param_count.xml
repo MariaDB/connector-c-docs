@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_param_count" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_param_count</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_param_count</refname>
+    <refpurpose>Returns the number of parameter for the given statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned long</type>
+      <methodname>mysql_stmt_param_count</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the number of parameter markers present in the prepared statement.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter> stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns the number of parameters in a prepared statement
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        This function will not deliver a valid result until
+        &function.mysql_stmt_prepare; was called.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_prepare;, &function.mysql_stmt_field_count;
+    </para>
+  </refsect1>
+</refentry>

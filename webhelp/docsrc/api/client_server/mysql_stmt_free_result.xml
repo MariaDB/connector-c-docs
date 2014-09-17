@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_free_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_free_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_free_result</refname>
+    <refpurpose>Frees stored result memory of a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_stmt_free_result</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the number of fields in a result set of a prepared statement, which
+      was allocated by &function.mysql_stmt_store_result;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      void
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_store_result;
+    </para>
+  </refsect1>
+</refentry>

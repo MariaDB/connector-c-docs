@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_autocommit" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_autocommit</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_autocommit</refname>
+    <refpurpose>Toggles autocommit mode on or off</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_autocommit</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>my_bool</type>
+        <parameter>auto_mode</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Toggles autocommit mode on or off for the current database connection.
+      Autocommit mode will be set if
+      <parameter>mode</parameter>
+      =1 or unset if
+      <parameter>mode</parameter>
+      =0.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>auto_mode</parameter></term>
+          <listitem><para>Whether to turn autocommit on or not.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns zero on success, or nonzero if an error occured.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1>
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          Non transactional table types like MyISAM always work in autocommit mode, regardless
+          if it is enabled or disabled. 
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          To determine which storage engines support transactions, use the SQL statement
+          <command>SELECT ENGINE FROM INFORMATION_SCHEMA.ENGINES WHERE TRANSACTIONS='YES'</command>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          To determine the current state of autocommit mode use one of the following SQL statements:
+          <itemizedlist><para><command>SELECT @@autocommit</command></para></itemizedlist>
+          <itemizedlist><para><command>SHOW VARIABLES LIKE 'autocommit'</command></para></itemizedlist>
+          <itemizedlist><para><command>SELECT VARIABLE_VALUE FROM INFORMATION_SCHEMA.SESSION_VARIABLES
+                WHERE VARIABLE_NAME='AUTOCOMMIT';</command></para></itemizedlist>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Be aware: &function.mysql_rollback; function will not work if autocommit
+          mode is switched on.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_rollback;, &function.mysql_commit;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+    &examples.mysql_autocommit;
+    <para>
+      Output:
+    </para>
+    <!-- &examples.mysql_autocommit.out; -->
+  </refsect1>
+</refentry>

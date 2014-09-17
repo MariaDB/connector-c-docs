@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_options" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_options</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_options</refname>
+    <refpurpose>Set options</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_options</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>enum</type>
+        <parameter>mysql_option</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const void *</type>
+        <parameter>arg</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Used to set extra connect options and affect behavior for a connection.
+    </para>
+    <para>
+      This function may be called multiple times to set several options.
+      &function.mysql_options; should be called after &function.mysql_init; and
+      before &function.mysql_real_connect;.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>mysql_option</parameter></term>
+          <listitem><para>The option you want to set.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>arg</parameter></term>
+          <listitem><para>The value for the option</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <table frame="none">
+      <caption>Options</caption>
+      <tgroup cols="2" role="ma_table">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="1" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Option</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_CONNECT_TIMEOUT</entry>
+            <entry role="ma_table">Connect time out in seconds.
+              <informalexample>
+                <synopsis language="C">unsigned int timeout= 5;
+                  mysql_options(mysql, MYSQL_OPT_CONNECT_TIMEOUT, (void *)&amp;timeout);</synopsis>
+              </informalexample>
+              <para>
+                This value will be passed as an
+                <parameter>unsigned int *</parameter>
+                parameter
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_COMPRESS</entry>
+            <entry role="ma_table">Use the zlib compressed protocol. If the server doesn't support it, the default
+              protocol will be used.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_OPT_COMPRESS, NULL);</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_NAMED_PIPE</entry>
+            <entry role="ma_table">Use named pipes for client/server protocol. Available for Microsoft Windows operating systems only.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_OPT_NAMED_PIPE, NULL);</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_LOCAL_INFILE</entry>
+            <entry role="ma_table">Enable or disable use of <command>LOAD DATA LOCAL INFILE</command>
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_OPT_LOCAL_INFILE, NULL);        /* disable */                  
+                  mysql_options(mysql, MYSQL_OPT_LOCAL_INFILE, (void *)"1"); /* enable */                  
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_INIT_COMMAND</entry>
+            <entry role="ma_table">Command(s) which will be executed when connecting and reconnecting to the server
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_INIT_COMMAND, (void *)"CREATE TABLE ...");</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_READ_DEFAULT_FILE</entry>
+            <entry role="ma_table">Read options from named option file instead of <filename>my.cnf</filename>
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_READ_DEFAULT_FILE, (void *)"./my_conf.cnf");</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_READ_DEFAULT_GROUP</entry>
+            <entry role="ma_table">Read options from the named group from my.cnf or the file specified with <parameter>MYSQL_READ_DEFAULT_FILE</parameter>.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_READ_DEFAULT_GROUP, (void *)"my_section");</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_SET_CHARSET_NAME</entry>
+            <entry role="ma_table">Specify the default character set for the connection.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_SET_CHARSET_NAME, (void *)"utf8");</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_RECONNECT</entry>
+            <entry role="ma_table">Enable or disable automatic reconnect.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_OPT_RECONNECT, NULL);        /* disable */                  
+                  mysql_options(mysql, MYSQL_OPT_RECONNECT, (void *)"1"); /* enable */                  
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_PROTOCOL</entry>
+            <entry role="ma_table">Specifies which type of protocol should be used.
+              <informalexample>
+                <synopsis language="C">enum mysql_protocol_type prot_type= MYSQL_PROTOCOL_SOCKET;
+                  mysql_options(mysql, MYSQL_OPT_PROTOCOL, (void *)&amp;prot_type);
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_READ_TIMEOUT</entry>
+            <entry role="ma_table">Specifies the timeout in seconds for reading packets from server.
+              <informalexample>
+                <synopsis language="C">unsigned int timeout= 5;
+                  mysql_options(mysql, MYSQL_OPT_READ_TIMEOUT, (void *)&amp;timeout);                   
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_CONNECT_TIMEOUT</entry>
+            <entry role="ma_table">Specifies the timeout in seconds for sending packets to server
+              <informalexample>
+                <synopsis language="C">unsigned int timeout= 5;
+                  mysql_options(mysql, MYSQL_OPT_WRITE_TIMEOUT, (void *)&amp;timeout);                   
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_REPORT_DATA_TRUNCATION</entry>
+            <entry role="ma_table">Enable or disable reporting data truncation errors for prepared statement.
+              <informalexample>
+                <synopsis language="C">mysql_options(mysql, MYSQL_REPORT_DATA_TRUNCATION, NULL);        /* disable */                  
+                  mysql_options(mysql, MYSQL_REPORT_DATA_TRUNCATION, (void *)"1"); /* enable */                  
+                </synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPT_PROGRESS_CALLBACK</entry>
+            <entry role="ma_table">Specifies a callback function which will be able to visualize the progress of certain 
+              long running statements
+              <informalexample>
+                <synopsis language="C">static void report_progress(const MYSQL *mysql __attribute__((unused)),
+                  uint stage, uint max_stage,
+                  double progress __attribute__((unused)),
+                  const char *proc_info __attribute__((unused)),
+                  uint proc_info_length __attribute__((unused)))
+                  {
+                  ...
+                  }
+                  mysql_options(mysql, MYSQL_OPT_PROGRESS_CALLBACK, (void *)report_progress);</synopsis>
+              </informalexample>
+            </entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_DATABASE_DRIVER</entry>
+            <entry role="ma_table">Loads a plugin to connect to another database type, e.g. the experimental Sqlite interface.&version_1_1;
+            </entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, non zero if an error occured (invalid option or value)
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        If
+        <parameter>MYSQL_READ_DEFAULT_FILE</parameter>
+        is specified the
+        <parameter>[client]</parameter>
+        section will be always processed.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_init;, &function.mysql_real_connect;
+    </para>
+  </refsect1>
+</refentry>

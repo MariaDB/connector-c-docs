@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_thread_end" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_thread_end</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_thread_end</refname>
+    <refpurpose>release thread specific memory for multi threaded client application</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_thread_end</methodname>
+      <methodparam>
+        <type>void</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      The &function.mysql_thread_end; function needs to be called before a client
+      thread ends. It will release thread specific memory, which was allocated by a
+      previous &function.mysql_thread_init; call.
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      void
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Unlike &function.mysql_thread_init; &function.mysql_thread_end; will not be
+        invoked automatically if the thread ends. To avoid memory leaks
+        &function.mysql_thread_end; must be called explicitly.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_thread_init;, &function.mysql_thread_safe;
+    </para>
+  </refsect1>
+</refentry>

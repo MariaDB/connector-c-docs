@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_close" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_close</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_close</refname>
+    <refpurpose>Closes a previously opened connection</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_close</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Closes a previously opened connection.
+    </para>
+    <para>
+      In case
+      <parameter>mysql</parameter>
+      was allocated by mysql_init, &function.mysql_close; will also free allocated
+      memory and resources.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      void.
+    </para>
+  </refsect1>
+  <refsect1>
+    &reftitle.version;
+    <para>&product_name; 1.0</para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        <para>
+          To avoid memory leaks and to save system ressources a connection handle
+          should always be closed.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_connect;, &function.mysql_init;
+    </para>
+  </refsect1>
+</refentry>

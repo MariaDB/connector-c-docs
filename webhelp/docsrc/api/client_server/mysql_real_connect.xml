@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_real_connect" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_real_connect</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_real_connect</refname>
+    <refpurpose>Establish a connection to database server</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL *</type>
+      <methodname>mysql_real_connect</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>host</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>user</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>passwd</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>db</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned int</type>
+        <parameter>port</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const char *</type>
+        <parameter>unix_socket</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned long</type>
+        <parameter>flags</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Establishes a connection to a database server.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>host</parameter></term>
+          <listitem><para>Can be either a host name or an IP address. Passing the NULL value or the string "localhost" to this parameter, the local host is assumed. When possible, pipes will be used instead of the TCP/IP protoco</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>user</parameter></term>
+          <listitem><para>The user name</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>passwd</parameter></term>
+          <listitem><para>If provided or NULL, the server will attempt to authenticate the user against those user records which have no password only. This allows one username to be used with different permissions (depending on if a password as provided or not).</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>db</parameter></term>
+          <listitem><para>If provided will specify the default database to be used when performing queries.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>port</parameter></term>
+          <listitem><para>Specifies the port number to attempt to connect to the server.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>unix_socket</parameter></term>
+          <listitem><para>Specifies the socket or named pipe that should be used.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>flags</parameter></term>
+          <listitem><para>The <parameter>flags</parameter> allows to set various connection options</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <table frame="none">
+      <caption>Connection flags</caption>
+      <tgroup cols="2" role="ma_table">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="1" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Flag</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">CLIENT_FOUND_ROWS</entry>
+            <entry role="ma_table">Return the number of matched rows instead of number of changed rows.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_NO_SCHEMA</entry>
+            <entry role="ma_table">Forbids the use of database.tablename.column syntax and forces the SQL parser to generate an error.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_COMPRESS</entry>
+            <entry role="ma_table">Use compression protocol</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_IGNORE_SPACE</entry>
+            <entry role="ma_table">This option makes all function names reserved words.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_INTERACTIVE</entry>
+            <entry role="ma_table">Forces the server to close a connection after <parameter>interactive_timeout</parameter> seconds (instead of <parameter>wait_timeout</parameter> seconds).</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_LOCAL_FILES</entry>
+            <entry role="ma_table">Use compression protocol</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_MULTI_STATEMENTS</entry>
+            <entry role="ma_table">Allows the client to send multiple statements in one command. Statements will be divided by a semicolon.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">CLIENT_MULTI_RESULTS</entry>
+            <entry role="ma_table">Indicates that the client is able to handle multiple result sets from stored procedures or multi statements. This option will be automatically set if <parameter>CLIENT_MULTIO_STATEMENTS</parameter> is set.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A
+      <parameter>MYSQL *</parameter>
+      handle or NULL if an error occured.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The password doesn't need to be encrypted before executing
+        &function.mysql_real_connect; this will be handled in the client server
+        protocol.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_init;, &function.mysql_options;
+    </para>
+  </refsect1>
+</refentry>

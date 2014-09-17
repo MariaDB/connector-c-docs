@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_attr_set" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_attr_set</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_attr_set</refname>
+    <refpurpose>Modifies the behavior of a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_stmt_attr_set</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+      <methodparam>
+        <type>enum</type>
+        <parameter>enum_stmt_attr_type</parameter>
+      </methodparam>
+      <methodparam>
+        <type>const void *</type>
+        <parameter>attr</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Used to modify the behavior of a prepared statement. This function may be
+      called multiple times to set several attributes.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>enum_stmt_attr_type</parameter></term>
+          <listitem><para>The attribute that you want to set. It can have one of the following values:</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>attr</parameter></term>
+          <listitem><para>The value to assign to the attribute</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <table frame="none">
+      <caption>Statement attributes</caption>
+      <tgroup cols="2">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="5" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Attribute</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">STMT_ATTR_UPDATE_MAX_LENGTH</entry>
+            <entry role="ma_table">Indicates if &function.mysql_stmt_store_result; will update the <parameter>max_length</parameter> value of <parameter>MYSQL_FIELD</parameter> structures.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">STMT_ATTR_CURSOR_TYPE</entry>
+            <entry role="ma_table">Cursor type. Possible values are <parameter>CURSOR_TYPE_READ_ONLY</parameter> or default value <parameter>CURSOR_TYPE_NO_CURSOR</parameter>.</entry>
+          </row>
+          <row>
+            <entry role="ma_table">STMT_ATTR_PREFETCH_ROWS</entry>
+            <entry role="ma_table">Number of rows which will be prefetched. The default value is 1.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Tero on success, non-zero on failure
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        If you use the
+        <parameter>MYSQL_STMT_ATTR_CURSOR_TYPE</parameter>
+        option with
+        <parameter>MYSQL_CURSOR_TYPE_READ_ONLY</parameter>
+        , a cursor is opened for the statement when you invoke
+        &function.mysql_stmt_execute;. If there is already an open cursor from a
+        previous &function.mysql_stmt_execute; call, it closes the cursor before
+        opening a new one. &function.mysql_stmt_reset; also closes any open cursor
+        before preparing the statement for re-execution.
+        &function.mysql_stmt_free_result; closes any open cursor.
+      </para>
+      <para>
+        If you open a cursor for a prepared statement it is unnecessary to call
+        &function.mysql_stmt_store_result;.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_attr_set;
+    </para>
+  </refsect1>
+</refentry>

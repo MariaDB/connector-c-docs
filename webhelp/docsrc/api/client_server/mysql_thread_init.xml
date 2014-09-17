@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_thread_init" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_thread_init</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_thread_init</refname>
+    <refpurpose>Thread initialization for multi threaded clients</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_thread_init</methodname>
+      <methodparam>
+        <type>void</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Multi threaded clients should call &function.mysql_thread_init; at the
+      beginning of the thread initialization to initialize thread specific client
+      library variables. If &function.mysql_thread_init; was not called explicitly,
+      it will be called automatically by &function.mysql_init; or
+      &function.mysql_real_connect;.
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero if successful or 1 if an error occured
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Before a client thread ends the &function.mysql_thread_end; function must be
+        called to release memory - otherwise the client library will report an
+        error.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_thread_end;, &function.mysql_thread_safe;
+    </para>
+  </refsect1>
+</refentry>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Revision: 326064 $ -->
+<!-- Membership: bundled, external -->
+<section>
+  <title>
+    Client server API
+  </title>
+  <para>
+    The client server API of &product_name; allows you to send and
+    retrieve data to and from a MariaDB database server. It supports also
+    communication with databases from other vendors, like Percona or Oracle.
+  </para>
+  <para>
+    Several other client APIs, like MariaDB Connector/ODBC use &product_name;
+    to communicate with a MariaDB database server.
+  </para>
+
+  &api.client_server.data_structures; 
+  &api.client_server.constants; 
+  &api.client_server.reference;
+</section>

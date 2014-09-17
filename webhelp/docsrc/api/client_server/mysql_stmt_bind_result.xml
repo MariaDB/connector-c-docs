@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_bind_result" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_bind_result</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_bind_result</refname>
+    <refpurpose>Binds variables to a prepared statement for result storage</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>my_bool</type>
+      <methodname>mysql_stmt_bind_result</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+      <methodparam>
+        <type>MYSQL_BIND *</type>
+        <parameter>bind</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Binds columns in the result set to variables.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>bind</parameter></term>
+          <listitem><para>An array of <parameter>MYSQL_BIND</parameter> structures. The size of this array must be equal to the number of columns in result set.</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, non-zero on failure.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        To determine the number of columns in result set use
+        &function.mysql_stmt_field_count;.
+      </para>
+      <para>
+        A column can be bound or rebound at any time, even after a result set has
+        been partially retrieved. The new binding takes effect the next time
+        &function.mysql_stmt_fetch; is called.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_stmt_field_count;, &function.mysql_stmt_execute;,
+      &function.mysql_stmt_fetch;
+    </para>
+  </refsect1>
+</refentry>

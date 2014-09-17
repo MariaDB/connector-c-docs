@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_library_init" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_library_init</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_server_end</refname>
+    <refpurpose>initializes the client library.</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mysql_library_init</methodname>
+      <methodparam>
+        <type>void</type>
+        <parameter></parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Initializes the client library. For a complete description see
+      &function.mysql_server_init;
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.notes;
+    <para>
+      <function>mysql_library_init()</function>
+      is an alias for &function.mysql_server_init; and defined in
+      <filename>mysql.h</filename>
+      :
+    </para>
+    <synopsis language="C">
+      #define mysql_library_init mysql_server_init
+    </synopsis>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_server_end;, &function.mysql_server_init;,
+      &function.mysql_library_end;
+    </para>
+  </refsect1>
+</refentry>

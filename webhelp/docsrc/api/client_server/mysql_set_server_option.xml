@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_set_server_option" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_set_server_option</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_set_server_option</refname>
+    <refpurpose>Enables or disables server option</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>int</type>
+      <methodname>mysql_set_server_option</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+      <methodparam>
+        <type>enum</type>
+        <parameter>enum_mysql_set_option</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Enables or disables a server option for the connection.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>enum_mysql_set_option</parameter></term>
+          <listitem><para>Server options</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <table frame="none">
+      <caption>Server options</caption>
+      <tgroup cols="2">
+        <?dbhtml cellspacing="0" ?>
+        <?dbhtml cellpadding="1" ?>
+        <thead>
+          <row>
+            <entry role="ma_table" colsep="0">Option</entry>
+            <entry role="ma_table" colsep="0">Description</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry role="ma_table">MYSQL_OPTION_MULTI_STATEMENTS_OFF</entry>
+            <entry role="ma_table">Disables multi statement support</entry>
+          </row>
+          <row>
+            <entry role="ma_table">MYSQL_OPTION_MULTI_STATEMENTS_ON</entry>
+            <entry role="ma_table">Enable multi statement support</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Zero on success, non-zero on failure
+    </para>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_real_connect;
+    </para>
+  </refsect1>
+</refentry>

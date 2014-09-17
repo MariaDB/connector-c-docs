@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_result_metadata" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_result_metadata</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_result_metadata</refname>
+    <refpurpose>Returns result set metadata from a prepared statement</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_RES *</type>
+      <methodname>mysql_stmt_result_metadata</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      If a statement passed to &function.mysql_stmt_prepare; is one that produces a
+      result set, &function.mysql_stmt_result_metadata; returns the result set that
+      can be used to process the meta information such as total number of fields
+      and individual field information.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>&param.stmt;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A result set containing field information for a result set
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The result set returned by &function.mysql_stmt_result_metadata; contains
+        only metadata. It does not contain any row results. The rows are obtained by
+        &function.mysql_stmt_fetch;.
+      </para>
+      <para>
+        This result set pointer can be passed as an argument to any of the
+        field-based functions that process result set metadata, such as:
+        &function.mysql_num_fields;, &function.mysql_fetch_field;,
+        &function.mysql_fetch_field_direct;, &function.mysql_fetch_fields;,
+        &function.mysql_field_count;, &function.mysql_field_seek;,
+        &function.mysql_field_tell;, &function.mysql_free_result;
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_free_result;, &function.mysql_stmt_prepare;
+    </para>
+  </refsect1>
+</refentry>

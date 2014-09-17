@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="ref.charset.datastructure">
+  &reftitle.data_structures;
+  <referenceinfo></referenceinfo>
+ <refentry id="struct.charset_info">
+  <refmeta>
+   <refentrytitle>CHARSET_INFO</refentrytitle>
+  </refmeta>
+   <refnamediv>
+   <refdescriptor>CHARSET_INFO</refdescriptor>
+   <refname>CHARSET_INFO</refname>
+   <refpurpose>Character set information</refpurpose>
+  </refnamediv>
+  <para>
+   <structname>CHARSET_INFO</structname>
+   contains character set information. It can be retrieved by the functions
+   &function.mysql_get_charset_by_name; and &function.mysql_get_charset_by_nr;
+   and is used in function &function.mariadb_convert_string;.
+  </para>
+  <para>
+   <structname>CHARSET_INFO</structname>
+   is defined in
+   <filename>m_ctype.h</filename>
+   :
+  </para>
+  <programlisting>
+<![CDATA[typedef struct charset_info_st
+{
+  uint	nr; /* so far only 1 byte for charset */
+  uint  state;
+  char	*csname;
+  char	*name;
+  char  *dir;
+  char  *encoding;
+  uint	char_minlen;
+  uint	char_maxlen;
+  uint 	(*mb_charlen)(uint c);
+  uint 	(*mb_valid)(const char *start, const char *end);
+} CHARSET_INFO;]]>
+  </programlisting>
+&reftitle.notes;
+<itemizedlist>
+     &reftitle.notes;
+     <para>
+    &product_name; uses it's own character set implementation, based on
+    PHP's mysqlnd extension and iconv library. All character sets are compiled
+    in by default and are not binary compatible with server character sets.
+   </para>
+</itemizedlist>
+ </refentry>
+ <refentry id="struct.my_charset_info">
+  <refmeta>
+   <refentrytitle>MY_CHARSET_INFO</refentrytitle>
+  </refmeta>
+   <refnamediv>
+   <refdescriptor>MY_CHARSET_INFO</refdescriptor>
+   <refname>MY_CHARSET_INFO</refname>
+   <refpurpose>Character set information used by connection</refpurpose>
+  </refnamediv>
+  <para>
+   <structname>CHARSET_INFO</structname>
+   Contains information about the current character set used by the connection.
+   The information can be obtained by the
+   &function.mysql_get_character_set_info; function.
+  </para>
+  <programlisting>
+<![CDATA[typedef struct character_set
+{
+  unsigned int      number;     /* character set number              */
+  unsigned int      state;      /* character set state               */
+  const char        *csname;    /* character set name                */
+  const char        *name;      /* collation name                    */
+  const char        *comment;   /* comment (unused)                  */
+  const char        *dir;       /* character set directory (unused)  */
+  unsigned int      mbminlen;   /* min. length for multibyte strings */
+  unsigned int      mbmaxlen;   /* max. length for multibyte strings */
+} MY_CHARSET_INFO;]]>
+  </programlisting>
+ </refentry>
+</section>

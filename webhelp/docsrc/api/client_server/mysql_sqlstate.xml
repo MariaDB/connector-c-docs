@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_sqlstate" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_sqlstate</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_sqlstate</refname>
+    <refpurpose>Returns sqlstate error</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_sqlstate</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns a string containing the SQLSTATE error code for the most recently
+      invoked function that can succeed or fail. The error code consists of five
+      characters. '00000' means no error. The values are specified by ANSI SQL and
+      ODBC
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns a string containing the SQLSTATE error code for the last error. The
+      error code consists of five characters. '
+      <parameter>00000'</parameter>
+      means no error.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Please note that not all &product_name; error codes are mapped to SQLSTATE
+        errors. Errors which can't be mapped will returned as value
+        <parameter>HY000</parameter>
+        .
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seeaso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_error;, &function.mysql_errno;
+    </para>
+  </refsect1>
+</refentry>

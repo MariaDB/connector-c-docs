@@ -1,0 +1,7 @@
+<!--
+  Do not change this automatically generated file!
+-->
+<!ENTITY var.date "@MY_CURRENT_YEAR@-@MY_CURRENT_MONTH@-@MY_CURRENT_DAY@">
+<!ENTITY var.date.year "@MY_CURRENT_YEAR@">
+<!ENTITY var.date.month "@MY_CURRENT_MONTH@">
+<!ENTITY var.date.day "@MY_CURRENT_DAY@">

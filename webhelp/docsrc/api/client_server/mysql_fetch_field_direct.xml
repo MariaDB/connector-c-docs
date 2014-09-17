@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_fetch_field_direct" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_fetch_field_direct</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_fetch_field_direct</refname>
+    <refpurpose>Fetch meta data for a single field</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_FIELD *</type>
+      <methodname>mysql_fetch_field_direct</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>res</parameter>
+      </methodparam>
+      <methodparam>
+        <type>unsigned int</type>
+        <parameter>fieldnr</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns a pointer to a
+      <parameter>MYSQL_FIELD</parameter>
+      structure which contains field information from the specified result set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>res</parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><parameter>fieldnr</parameter></term>
+          <listitem><para>The field number. This value must be within the range from 0 to number of fields - 1</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      A pointer to a
+      <type>MYSQL_FIELD</type>
+      structure
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.0
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+      <listitem>
+        The total number of fields can be obtained by &function.mysql_field_count;
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_fetch_field;, &function.mysql_field_count;
+    </para>
+  </refsect1>
+</refentry>

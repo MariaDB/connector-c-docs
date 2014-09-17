@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_fetch_fields" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_fetch_fields</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_fetch_fields</refname>
+    <refpurpose>Returns an array of fields representing the fields in a result set</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_FIELD *</type>
+      <methodname>mysql_fetch_fields</methodname>
+      <methodparam>
+        <type>MYSQL_RES *</type>
+        <parameter>res</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      This function serves an identical purpose to the &function.mysql_fetch_field;
+      function with the single difference that instead of returning one field at a
+      time for each field, the fields are returned as an array. Each field contains
+      the definition for a column of the result set.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>res</parameter></term>
+          <listitem><para>&param.result;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      An array of fields.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The total number of fields can be obtained by &function.mysql_field_count;
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_fetch_field;,
+      &function.mysql_fetch_field_direct;&function.mysql_field_count;
+    </para>
+  </refsect1>
+</refentry>

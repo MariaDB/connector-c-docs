@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_field_count" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_field_count</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_field_count</refname>
+    <refpurpose>Returns the number of fields for the most recent query</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>unsigned int</type>
+      <methodname>mysql_field_count</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the number of columns for the most recent query on the connection
+      represented by the link parameter. This function can be useful when using the
+      &function.mysql_store_result; function to determine if the query should have
+      produced a non-empty result set or not without knowing the nature of the
+      query.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      An unsigned integer representing the number of fields in a result set.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        Function &function.mysql_field_count; should be used to determine if there
+        is a result set available.
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mysql_store_result;, &function.mysql_use_result;
+    </para>
+  </refsect1>
+</refentry>

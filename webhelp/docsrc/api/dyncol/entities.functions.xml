@@ -1,0 +1,18 @@
+<!--
+  Autogeerated file - do not change this file manually!
+-->
+&api.dyncol.mariadb_dyncol_column_count;
+&api.dyncol.mariadb_dyncol_create_many_named;
+&api.dyncol.mariadb_dyncol_create_many_num;
+&api.dyncol.mariadb_dyncol_exists_named;
+&api.dyncol.mariadb_dyncol_exists_num;
+&api.dyncol.mariadb_dyncol_free;
+&api.dyncol.mariadb_dyncol_get_named;
+&api.dyncol.mariadb_dyncol_get_num;
+&api.dyncol.mariadb_dyncol_init;
+&api.dyncol.mariadb_dyncol_list_named;
+&api.dyncol.mariadb_dyncol_list_num;
+&api.dyncol.mariadb_dyncol_unpack;
+&api.dyncol.mariadb_dyncol_update_many_named;
+&api.dyncol.mariadb_dyncol_update_many_num;
+

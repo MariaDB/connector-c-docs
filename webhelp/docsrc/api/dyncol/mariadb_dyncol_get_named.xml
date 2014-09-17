@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mariadb_dyncol_get_named" display-name="1">
+  <refmeta>
+    <refentrytitle>mariadb_dyncol_get_named</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mariadb_dyncol_get_named</refname>
+    <refpurpose>Get the column value for a specified non mumeric key</refpurpose>
+  </refnamediv>
+  <refsect1></refsect1>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>void</type>
+      <methodname>mariadb_dyncol_list_named</methodname>
+      <methodparam>
+        <type>DYNAMIC_COLUMN *</type>
+        <parameter>str</parameter>
+      </methodparam>
+      <methodparam>
+        <type>uint</type>
+        <parameter>column_key</parameter>
+      </methodparam>
+      <methodparam>
+        <type>DYNAMIC_COLUMN_VALUE</type>
+        <parameter>column_value</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Get the column value for a specified non numeric key, specified in
+      <parameter>column_key</parameter>
+      .
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <parameter>str</parameter>
+          </term>
+          <listitem><para>A pointer to a dynamic column.</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_key</parameter>
+          </term>
+          <listitem><para>Non numeric column key</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <parameter>column_value</parameter>
+          </term>
+          <listitem><para>The value of the specified column</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns 0 or positive value on success, a nagative value on error.
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      &reftitle.notes;
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+    <para>
+      &function.mariadb_dyncol_get_num; &function.mariadb_dyncol_exists_named;,
+      &function.mariadb_dyncol_list_named;
+    </para>
+  </refsect1>
+  <refsect1 role="example">
+    <title>
+      Example
+    </title>
+  </refsect1>
+</refentry>

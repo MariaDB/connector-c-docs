@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_stmt_param_metadata" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_stmt_param_metadata</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_stmt_param_metadata</refname>
+    <refpurpose>Returns metadata information for parameter markers</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>MYSQL_RES *</type>
+      <methodname>mysql_stmt_param_metadata</methodname>
+      <methodparam>
+        <type>MYSQL_STMT *</type>
+        <parameter>stmt</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      This functionality is currently not supported by MariaDB servers.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>stmt</parameter></term>
+          <listitem><para>A handle for a prepared statement</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      NULL
+    </para>
+  </refsect1>
+  <refsect1 role="notes">
+    &reftitle.notes;
+    <itemizedlist>
+      <para>
+        The MariaDB server curremtly doesn't provide metadata information for parameter markers. In case the parameter type is not known, the bind
+        buffer should be bound to a string (MYSQL_TYPE_STRING).
+      </para>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    &reftitle.seealso;
+  </refsect1>
+</refentry>

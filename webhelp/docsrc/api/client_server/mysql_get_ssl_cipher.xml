@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<refentry id="functions.mysql_get_ssl_cipher" display-name="0">
+  <refmeta>
+    <refentrytitle>mysql_get_ssl_cipher</refentrytitle>
+  </refmeta>
+  <refnamediv>
+    <refname>mysql_get_ssl_cipher</refname>
+    <refpurpose>Returns the SSL cipher used for the specified connection</refpurpose>
+  </refnamediv>
+  <refsect1 role="description">
+    &reftitle.description;
+    <methodsynopsis>
+      <type>const char *</type>
+      <methodname>mysql_get_ssl_cipher</methodname>
+      <methodparam>
+        <type>MYSQL *</type>
+        <parameter>mysql</parameter>
+      </methodparam>
+    </methodsynopsis>
+    <para>
+      Returns the SSL cipher used for the specified connection.
+    </para>
+  </refsect1>
+  <refsect1 role="parameters">
+    &reftitle.parameters;
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><parameter>mysql</parameter></term>
+          <listitem><para>&param.mysql;</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.retval;
+    <para>
+      Returns the SSL cipher used for the specified connection or NULL if the specified connection doesn't use SSL encryption.
+    </para>
+  </refsect1>
+  <refsect1 role='version'>
+    &reftitle.version;
+    <para>
+      &product_name; 1.1
+    </para>
+  </refsect1>
+  <refsect1 role="returnvalue">
+    &reftitle.notes;
+    <itemizedlist>
+    </itemizedlist>
+  </refsect1>
+  <refsect1 role="seealso">
+    <title>
+      See also &function.mysql_ssl_set;
+    </title>
+  </refsect1>
+</refentry>
