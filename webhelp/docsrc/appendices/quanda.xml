@@ -100,7 +100,7 @@
         </para>
       </question>
       <answer>
-        <label>&nbsp;&nbsp;&nbsp;</label>
+        <label></label>
         <para>
           If you experience problems with binary (compiled) programs after upgrading your
           &product_name; the programs are likely compiled with older headers. In this case

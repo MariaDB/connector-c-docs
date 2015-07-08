@@ -71,14 +71,10 @@
     &reftitle.notes;
     <itemizedlist>
       <listitem>
-        Contrary to &function.mysql_query_start; function &function.mysql_real_query_start; is
-        binary safe.
-      </listitem>
-      <listitem>
       In case &function.mysql_real_query_start; returns zero the statement was immediately processed and the value of <parameter>*err</parameter> parameter needs to be checked.
       </listitem>
       <listitem>
-        This function will crash with a NULL pointer exception unless the <constant>MYSQL_OPT_NONBLOOCK</constant> option was set via &mysql_options;.
+        This function will crash with a NULL pointer exception unless the <constant>MYSQL_OPT_NONBLOOCK</constant> option was set via &function.mysql_options;.
       </listitem>
     </itemizedlist>
   </refsect1>

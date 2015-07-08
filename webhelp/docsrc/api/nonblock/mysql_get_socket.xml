@@ -35,7 +35,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     <para>
       Returns the descriptor of the socket used for the current connection.
     </para>

@@ -35,7 +35,7 @@
       <variablelist>
         <varlistentry>
           <term><parameter>err</parameter></term>
-          <listitem><para>&retval.bool;</para></listitem>
+          <listitem><para>my_bool</para></listitem>
         </varlistentry>
         <varlistentry>
           <term><parameter>mysql</parameter></term>
@@ -49,7 +49,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     &return.nonblock;
   </refsect1>
   <refsect1>
@@ -60,7 +60,7 @@
     &reftitle.notes;
     <itemizedlist>
       <listitem>
-        This function will crash with a NULL pointer exception unless the <constant>MYSQL_OPT_NONBLOOCK</constant> option was set via &mysql_options;.
+        This function will crash with a NULL pointer exception unless the <constant>MYSQL_OPT_NONBLOOCK</constant> option was set via &function.mysql_options;.
       </listitem>
     </itemizedlist>
   </refsect1>

@@ -9,7 +9,6 @@
   </refnamediv>
   <refsect1 role="description">
     &reftitle.description;
-    &reftitle.descripption;
     <methodsynopsis>
       <type>my_bool</type>
       <methodname>mysql_change_user</methodname>

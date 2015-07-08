@@ -34,7 +34,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     <para>
       Returns the read time out value in milliseconds.
     </para>

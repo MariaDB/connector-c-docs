@@ -38,7 +38,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     <para>
       Returns the number of affected rows on success, or -1 if the last query
       failed.

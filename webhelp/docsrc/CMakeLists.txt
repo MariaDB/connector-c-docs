@@ -1,4 +1,4 @@
-PROJECT(mariadb_client_docs)
+PROJECT(mariadb_client_docs C)
 # Minimum required version is Cmake 2.6.x
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0 FATAL_ERROR)
 IF(COMMAND CMAKE_POLICY)

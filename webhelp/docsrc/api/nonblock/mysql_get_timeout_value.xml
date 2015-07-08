@@ -9,7 +9,6 @@
   </refnamediv>
   <refsect1 role="description">
     &reftitle.description;
-    &reftitle.description;
     <methodsynopsis>
       <type>unsigned int</type>
       <methodname>mysql_get_timeout_value</methodname>
@@ -34,7 +33,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     <para>
       Returns the read time out value in seconds.
     </para>

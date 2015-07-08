@@ -99,7 +99,7 @@
     </para>
   </refsect1>
   <refsect1 role="returnvalue">
-    &retitle.retval;
+    &reftitle.retval;
     &return.nonblock;
   </refsect1>
   <refsect1>

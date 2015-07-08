@@ -29,7 +29,7 @@ Just like mysql_real_query_start(), mysql_real_query_cont() returns zero when do
 </para>
 <para>
 
-  Some calls, like &function.mysql_option; do not do any socket I/O, and so can never block. For these, there are no separate _start() or _cont() calls. See the "Non-blocking API reference" page for a full list of what functions can and can not block.
+  Some calls, like &function.mysql_options; do not do any socket I/O, and so can never block. For these, there are no separate _start() or _cont() calls. See the "Non-blocking API reference" page for a full list of what functions can and can not block.
 </para>
 <para>
   The checking for events on the socket / timeout can be done with <function>select()</function> or <function>poll()</function> or a similar mechanism. Though often it will be done using a higher-level framework (such as libevent), which supplies facilities for registering and acting on such conditions.
