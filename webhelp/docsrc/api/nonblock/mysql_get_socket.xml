@@ -37,7 +37,7 @@
   <refsect1 role="returnvalue">
     &reftitle.retval;
     <para>
-      Returns the descriptor of the socket used for the current connection.
+      Returns the descriptor of the socket used for the current connection or MARIADB_INVALID_SOCKET if an error occured.
     </para>
   </refsect1>
   <refsect1>
